@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Contact - Digital Multimedia Design Portfolio</title>
+    <title>Contact - Emith Dissanayake</title>
+    
+    <link rel="icon" href="images/favicon.png" type="image/png">
 
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -11,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -114,11 +119,10 @@
         
         <div id="mobile-menu" class="md:hidden bg-background-dark border-t border-[#332839]/30">
             <div class="flex flex-col gap-5 px-8 py-8">
-                <div class="flex flex-col gap-5 px-8 py-8">
-                    <a href="index.html" class="nav-click-effect text-lg font-medium">Home</a>
-                    <a href="aboutme.html" class="nav-click-effect text-lg font-medium">About Me</a>
-                    <a href="projects.html" class="nav-click-effect text-lg font-bold text-primary">Contact</a>
-                    <a href="contact.html" class="nav-click-effect text-lg font-medium underline">My Projects</a>
+                <a href="index.html" class="nav-click-effect text-lg font-medium">Home</a>
+                <a href="aboutme.html" class="nav-click-effect text-lg font-medium">About Me</a>
+                <a href="contact.html" class="nav-click-effect text-lg font-bold text-primary">Contact</a>
+                <a href="projects.html" class="nav-click-effect text-lg font-medium underline">My Projects</a>
             </div>
         </div>
     </header>
@@ -144,7 +148,7 @@
                             </div>
                             <div>
                                 <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-0.5">CALL ME</p>
-                                <a class="text-lg font-bold text-white hover:text-primary transition-colors select-all" href="tel:diss0006@algonquinlive.com">(613) 852 4929</a>
+                                <a class="text-lg font-bold text-white hover:text-primary transition-colors select-all" href="tel:+16138524929">+1 (613) 852 4929</a>
                             </div>
                         </div>
 
@@ -172,14 +176,11 @@
                     <div class="pt-10 border-t border-border-dark/50">
                         <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-6">Connect</p>
                         <div class="flex gap-4">
-                            <a aria-label="LinkedIn" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-dark border border-border-dark hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 text-gray-300" href="#">
-                                <span class="material-symbols-outlined text-[20px]">link</span>
-                            </a>
-                            <a aria-label="Behance" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-dark border border-border-dark hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 text-gray-300" href="#">
-                                <span class="material-symbols-outlined text-[20px]">palette</span>
-                            </a>
-                            <a aria-label="Instagram" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-dark border border-border-dark hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 text-gray-300" href="#">
-                                <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+                            <a class="nav-click-effect text-text-secondary hover:text-primary transition-colors flex flex-col items-center gap-1 group" href="https://www.linkedin.com/in/emithhansana/">
+                                <span class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-dark border border-[#332839] group-hover:border-primary transition-colors">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                                </span>
+                                <span class="text-xs">LinkedIn</span>
                             </a>
                         </div>
                     </div>
@@ -187,10 +188,11 @@
             </div>
 
             <div class="lg:col-span-7">
+                <h3 class="text-2xl md:text-2xl font-black leading-tight tracking-[-0.033em] text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60 py-2">Or You Can Reach Me Out From Here!</h3>
                 <div class="glass-panel rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden group/form">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none"></div>
                     
-                    <form class="flex flex-col gap-6 relative z-10">
+                    <form id="contact-form" class="flex flex-col gap-6 relative z-10">
                         <div class="grid md:grid-cols-2 gap-6">
                             <label class="flex flex-col gap-2">
                                 <span class="text-white text-xs font-bold tracking-wider ml-1 uppercase">Your Name</span>
@@ -198,7 +200,7 @@
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500">
                                         <span class="material-symbols-outlined text-[20px]">person</span>
                                     </div>
-                                    <input class="w-full bg-surface-dark/50 border border-border-dark rounded-xl px-4 pl-11 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200" placeholder="Jane Doe" type="text" />
+                                    <input name="from_name" required class="w-full bg-surface-dark/50 border border-border-dark rounded-xl px-4 pl-11 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200" placeholder="Jane Doe" type="text" />
                                 </div>
                             </label>
                             <label class="flex flex-col gap-2">
@@ -207,7 +209,7 @@
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500">
                                         <span class="material-symbols-outlined text-[20px]">alternate_email</span>
                                     </div>
-                                    <input class="w-full bg-surface-dark/50 border border-border-dark rounded-xl px-4 pl-11 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200" placeholder="jane@example.com" type="email" />
+                                    <input name="from_email" required class="w-full bg-surface-dark/50 border border-border-dark rounded-xl px-4 pl-11 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200" placeholder="jane@example.com" type="email" />
                                 </div>
                             </label>
                         </div>
@@ -218,18 +220,18 @@
                                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-500">
                                     <span class="material-symbols-outlined text-[20px]">short_text</span>
                                 </div>
-                                <input class="w-full bg-surface-dark/50 border border-border-dark rounded-xl px-4 pl-11 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200" placeholder="Project Inquiry" type="text" />
+                                <input name="subject" class="w-full bg-surface-dark/50 border border-border-dark rounded-xl px-4 pl-11 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200" placeholder="Project Inquiry" type="text" />
                             </div>
                         </label>
 
                         <label class="flex flex-col gap-2">
                             <span class="text-white text-xs font-bold tracking-wider ml-1 uppercase">Message</span>
-                            <textarea class="w-full bg-surface-dark/50 border border-border-dark rounded-xl px-4 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200 min-h-[160px] resize-y" placeholder="Tell me a bit about your project goals and timeline..."></textarea>
+                            <textarea name="message" required class="w-full bg-surface-dark/50 border border-border-dark rounded-xl px-4 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200 min-h-[160px] resize-y" placeholder="Tell me a bit about your project goals and timeline..."></textarea>
                         </label>
 
                         <div class="pt-2">
-                            <button class="group relative w-full inline-flex justify-center items-center gap-2 bg-primary hover:bg-[#b226f8] text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-[0_0_20px_-5px_rgba(164,19,236,0.5)] hover:shadow-[0_0_25px_0px_rgba(164,19,236,0.6)]" type="button">
-                                <span>Send Message</span>
+                            <button id="submit-btn" class="group relative w-full inline-flex justify-center items-center gap-2 bg-primary hover:bg-[#b226f8] text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-[0_0_20px_-5px_rgba(164,19,236,0.5)] hover:shadow-[0_0_25px_0px_rgba(164,19,236,0.6)]" type="submit">
+                                <span id="btn-text">Send Message</span>
                                 <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">send</span>
                             </button>
                         </div>
@@ -259,10 +261,62 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Tooltip Logic
+            
+            // --- EMAIL CONFIGURATION (FILL THESE IN) ---
+            const PUBLIC_KEY = "p-ghy0Ez8zyMdUdmj";  
+            const SERVICE_ID = "service_7jsg5nx";
+            const TEMPLATE_ID_OWNER = "template_7n8dksn";   // Template that sends details to YOU
+            const TEMPLATE_ID_CLIENT = "template_8icsunh"; // Template that says "Thank You" to THEM
+
+            emailjs.init(PUBLIC_KEY);
+
+            // --- EMAIL SENDING LOGIC ---
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+
+            if(contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Stop page reload
+
+                    // 1. Loading State
+                    btnText.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = '0.7';
+
+                    // 2. Send Email to YOU (Owner)
+                    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID_OWNER, this)
+                        .then(function() {
+                            
+                            // 3. If that works, Send "Thank You" to THEM (Visitor)
+                            emailjs.send(SERVICE_ID, TEMPLATE_ID_CLIENT, {
+                                from_name: contactForm.from_name.value,
+                                from_email: contactForm.from_email.value,
+                                subject: contactForm.subject.value
+                            });
+
+                            // 4. Success UI
+                            alert('Message sent successfully! I will get back to you soon.');
+                            contactForm.reset();
+                            btnText.textContent = 'Send Message';
+                            submitBtn.disabled = false;
+                            submitBtn.style.opacity = '1';
+
+                        }, function(error) {
+                            // Error UI
+                            alert('Failed to send message. Please try again.');
+                            console.error('FAILED...', error);
+                            btnText.textContent = 'Send Message';
+                            submitBtn.disabled = false;
+                            submitBtn.style.opacity = '1';
+                        });
+                });
+            }
+
+            // --- EXISTING UI LOGIC ---
+            // Tooltips
             const tooltip = document.getElementById('cursor-tooltip');
             const triggers = document.querySelectorAll('.tooltip-trigger');
-
             triggers.forEach(trigger => {
                 trigger.addEventListener('mouseenter', () => {
                     tooltip.textContent = trigger.getAttribute('data-tooltip');
@@ -275,50 +329,17 @@
                 trigger.addEventListener('mouseleave', () => { tooltip.style.opacity = '0'; });
             });
 
-            // Hamburger Menu Logic
+            // Mobile Menu
             const btn = document.getElementById('menu-btn');
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
-
-            btn.addEventListener('click', () => {
-                const isOpen = menu.classList.toggle('open');
-                icon.textContent = isOpen ? 'close' : 'menu';
-            });
-
-            // Filtering Logic
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const cards = document.querySelectorAll('.project-card');
-
-            filterBtns.forEach(button => {
-                button.addEventListener('click', () => {
-                    const filter = button.getAttribute('data-filter');
-                    
-                    // Button UI Toggle
-                    filterBtns.forEach(btn => {
-                        btn.classList.replace('bg-primary', 'bg-[#332839]');
-                        const p = btn.querySelector('p');
-                        p.classList.replace('text-white', 'text-[#b09db9]');
-                        p.classList.replace('font-bold', 'font-medium');
-                    });
-                    button.classList.replace('bg-[#332839]', 'bg-primary');
-                    const activeP = button.querySelector('p');
-                    activeP.classList.replace('text-[#b09db9]', 'text-white');
-                    activeP.classList.replace('font-medium', 'font-bold');
-
-                    // Filter Card Animation
-                    cards.forEach(card => {
-                        const category = card.getAttribute('data-category');
-                        if (filter === 'all' || category === filter) {
-                            card.classList.remove('is-hidden');
-                            card.animate([{ opacity: 0, transform: 'scale(0.9)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 300 });
-                        } else {
-                            card.classList.add('is-hidden');
-                        }
-                    });
+            if(btn && menu && icon) {
+                btn.addEventListener('click', () => {
+                    const isOpen = menu.classList.toggle('open');
+                    icon.textContent = isOpen ? 'close' : 'menu';
                 });
-            });
+            }
         });
     </script>
-    
 </body>
 </html>
