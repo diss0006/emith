@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Me - Digital Multimedia Designer</title>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a413ec",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#1c1022",
+                        "surface-dark": "#2a1b32",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+        <header class="w-full border-b border-solid border-b-[#332839]/30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md sticky top-0 z-50">
+        <div class="layout-container flex justify-center">
+            <div class="flex max-w-[1200px] flex-1 items-center justify-between px-6 py-4 lg:px-10">
+                <div class="flex items-center gap-2 text-[#111418] dark:text-white">
+                    <a href="index.html" class="cursor-pointer nav-click-effect">
+                        <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] font-display pl-1">Emith Dissanayake</h2>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="nav-click-effect text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                    <a class="nav-click-effect text-sm font-medium hover:text-primary text-primary transition-colors" href="aboutme.html">About Me</a>
+                    <a class="nav-click-effect text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+                    <a href="projects.html" class="nav-click-effect flex items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary/60 text-white text-sm font-bold tracking-[0.015em] shadow-[0_0_15px_rgba(164,19,236,0.3)]">My Projects</a>
+                    
+                </div>
+
+                <button id="menu-btn" class="md:hidden flex items-center p-2 text-primary nav-click-effect">
+                    <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden bg-background-dark border-t border-[#332839]/30">
+            <div class="flex flex-col gap-5 px-8 py-8">
+                <div class="flex flex-col gap-5 px-8 py-8">
+                    <a href="index.html" class="nav-click-effect text-lg font-medium">Home</a>
+                    <a href="aboutme.html" class="nav-click-effect text-lg font-medium">About Me</a>
+                    <a href="projects.html" class="nav-click-effect text-lg font-bold text-primary">Contact</a>
+                    <a href="contact.html" class="nav-click-effect text-lg font-medium underline">My Projects</a>
+            </div>
+        </div>
+    </header>
+
+        <main class="flex-grow flex flex-col items-center">
+            
+            <section class="w-full max-w-7xl px-4 md:px-10 py-12 md:py-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 flex flex-col gap-6 order-2 lg:order-1">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 w-fit border border-green-500/20 mb-2">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            <span class="text-xs font-bold text-green-500 uppercase tracking-wider">Available for Internship/Co-op</span>
+                        </div>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight">
+                            Digital Alchemist & <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Multimedia Designer</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+                            Hello, I'm Alex. I craft immersive digital experiences at the intersection of technology and art. Welcome to my creative playground where every pixel tells a story.
+                        </p>
+                        <div class="flex flex-wrap gap-4 mt-2">
+                            <button class="flex items-center gap-2 h-12 px-6 bg-primary hover:bg-primary/90 text-white rounded-lg font-bold transition-all hover:scale-105 shadow-lg shadow-primary/25">
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                                <span>Download Resume</span>
+                            </button>
+                            <button class="flex items-center gap-2 h-12 px-6 bg-transparent border border-slate-300 dark:border-slate-700 hover:border-primary text-slate-900 dark:text-white hover:text-primary rounded-lg font-bold transition-all">
+                                <span>View Portfolio</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 order-1 lg:order-2 relative">
+                        <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 group z-20">
+                            <!-- <div class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent mix-blend-overlay z-10 pointer-events-none"></div> -->
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" 
+                                 style="background-image: url('images/mypic.jpg');"
+                                 role="img" 
+                                 aria-label="Artistic portrait of Alex Sterling">
+                            </div>
+                        </div>
+                        <div class="absolute -z-0 -bottom-6 -right-6 w-full h-full border-2 border-primary/30 rounded-2xl hidden md:block"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="w-full bg-surface-light dark:bg-surface-dark border-y border-gray-200 dark:border-white/5 py-16 md:py-24">
+                <div class="max-w-4xl mx-auto px-4 text-center">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-6">format_quote</span>
+                    <h2 class="text-3xl md:text-4xl font-bold leading-snug">
+                        "I believe that design is intelligence made visible. My passion lies in solving complex problems through visual storytelling."
+                    </h2>
+                    <div class="mt-8 flex justify-center">
+                        <div class="h-1 w-20 bg-primary rounded-full"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="w-full max-w-7xl px-4 md:px-10 py-16 md:py-24">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+                    
+                    <aside class="lg:col-span-4 flex flex-col gap-12">
+                        <div>
+                            <h3 class="flex items-center gap-2 text-xl font-bold mb-6 text-slate-900 dark:text-white">
+                                <span class="material-symbols-outlined text-primary">person</span>
+                                The Narrative
+                            </h3>
+                            <div class="text-slate-600 dark:text-slate-300 space-y-4 leading-relaxed">
+                                <p>With a background in fine arts and a focus on digital media, I bring a unique perspective to every project. I started my journey experimenting with traditional mediums before falling in love with the limitless possibilities of digital canvas.</p>
+                                <p>When I'm not pushing pixels, you can find me exploring urban architecture for inspiration or experimenting with generative art code.</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="flex items-center gap-2 text-xl font-bold mb-6 text-slate-900 dark:text-white">
+                                <span class="material-symbols-outlined text-primary">build</span>
+                                Toolkit
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Figma</span>
+                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Adobe CC</span>
+                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Blender 3D</span>
+                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Webflow</span>
+                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">HTML/CSS</span>
+                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Generative AI</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="flex items-center gap-2 text-xl font-bold mb-6 text-slate-900 dark:text-white">
+                                <span class="material-symbols-outlined text-primary">psychology</span>
+                                Expertise
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-md bg-primary/10 text-primary border border-primary/20 text-sm font-bold">UI/UX Design</span>
+                                <span class="px-3 py-1.5 rounded-md bg-primary/10 text-primary border border-primary/20 text-sm font-bold">Motion Graphics</span>
+                                <span class="px-3 py-1.5 rounded-md bg-primary/10 text-primary border border-primary/20 text-sm font-bold">Brand Identity</span>
+                                <span class="px-3 py-1.5 rounded-md bg-primary/10 text-primary border border-primary/20 text-sm font-bold">Visual Storytelling</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="lg:col-span-8 flex flex-col gap-12">
+                        
+                        <section>
+                            <h3 class="flex items-center gap-2 text-2xl font-bold mb-8 text-slate-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4">
+                                Experience
+                            </h3>
+                            <div class="flex flex-col gap-8 relative pl-4 border-l-2 border-gray-200 dark:border-white/10 ml-3">
+                                <div class="relative pl-8">
+                                    <div class="absolute -left-[21px] top-1 h-4 w-4 rounded-full border-[3px] border-background-light dark:border-background-dark bg-primary"></div>
+                                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Junior Visual Designer</h4>
+                                        <span class="text-sm font-medium text-primary">2022 - Present</span>
+                                    </div>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400 font-medium mb-3">Creative Studio X • New York, NY</p>
+                                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Collaborating with senior designers to produce high-fidelity mockups and interactive prototypes. Led the visual refresh for 3 major client branding projects.</p>
+                                </div>
+                                <div class="relative pl-8">
+                                    <div class="absolute -left-[21px] top-1 h-4 w-4 rounded-full border-[3px] border-background-light dark:border-background-dark bg-slate-400 dark:bg-slate-600"></div>
+                                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Freelance Multimedia Artist</h4>
+                                        <span class="text-sm font-medium text-slate-500 dark:text-slate-400">2020 - 2022</span>
+                                    </div>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400 font-medium mb-3">Remote</p>
+                                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Executed diverse projects ranging from album art design to promotional motion graphics for indie musicians and local startups.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h3 class="flex items-center gap-2 text-2xl font-bold mb-8 text-slate-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4">
+                                Education
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="group p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/5 hover:border-primary/50 transition-colors">
+                                    <div class="flex items-start justify-between mb-4">
+                                        <div class="p-2 rounded-lg bg-primary/10 text-primary"><span class="material-symbols-outlined">school</span></div>
+                                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">2019 - 2023</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">BFA Digital Arts & Design</h4>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400">University of Creative Arts</p>
+                                    <p class="mt-4 text-xs text-slate-400">Graduated with Honors • 3.9 GPA</p>
+                                </div>
+                                <div class="group p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/5 hover:border-primary/50 transition-colors">
+                                    <div class="flex items-start justify-between mb-4">
+                                        <div class="p-2 rounded-lg bg-primary/10 text-primary"><span class="material-symbols-outlined">verified</span></div>
+                                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">2023</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Google UX Design Cert</h4>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400">Coursera</p>
+                                    <p class="mt-4 text-xs text-slate-400">Professional Certificate</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h3 class="flex items-center gap-2 text-2xl font-bold mb-8 text-slate-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4">
+                                Recognition
+                            </h3>
+                            <div class="flex flex-col gap-4">
+                                <div class="flex items-center gap-4 p-4 rounded-lg hover:bg-surface-light dark:hover:bg-surface-dark transition-colors border border-transparent hover:border-gray-200 dark:hover:border-white/5">
+                                    <div class="flex-shrink-0 text-yellow-500"><span class="material-symbols-outlined">emoji_events</span></div>
+                                    <div>
+                                        <h5 class="text-base font-bold text-slate-900 dark:text-white">Best Visual Design 2023</h5>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Awwwards Honorable Mention</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 p-4 rounded-lg hover:bg-surface-light dark:hover:bg-surface-dark transition-colors border border-transparent hover:border-gray-200 dark:hover:border-white/5">
+                                    <div class="flex-shrink-0 text-yellow-500"><span class="material-symbols-outlined">emoji_events</span></div>
+                                    <div>
+                                        <h5 class="text-base font-bold text-slate-900 dark:text-white">Adobe Creative Jam Finalist</h5>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Top 10 out of 500+ entries</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <section class="w-full px-4 py-20 bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-white/5 text-center">
+                <div class="max-w-2xl mx-auto flex flex-col items-center gap-6">
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Ready to create something amazing?</h2>
+                    <p class="text-slate-600 dark:text-slate-300">
+                        I'm currently available for freelance projects and full-time opportunities.
+                    </p>
+                    <button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-primary/90 text-white text-base font-bold shadow-xl shadow-primary/20 transition-transform hover:-translate-y-1">
+                        Let's Talk
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="w-full border-t border-gray-200 dark:border-white/10 bg-background-light dark:bg-background-dark py-12">
+            <div class="max-w-7xl mx-auto px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2 text-slate-900 dark:text-white">
+                    <span class="material-symbols-outlined text-primary">hexagon</span>
+                    <span class="font-bold">Alex Sterling</span>
+                </div>
+                <div class="flex gap-8">
+                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">LinkedIn</a>
+                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">Dribbble</a>
+                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">Behance</a>
+                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">Instagram</a>
+                </div>
+                <div class="text-sm text-slate-500">
+                    © 2023 Alex Sterling. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
