@@ -38,9 +38,54 @@
             },
         }
     </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1c1022; }
+        ::-webkit-scrollbar-thumb { background: #4b3b54; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a413ec; }
+
+        .glass-panel {
+            background: rgba(42, 30, 50, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        #mobile-menu.open {
+            max-height: 300px;
+            opacity: 1;
+        }
+
+        /* Tactile Click Effect */
+        .nav-click-effect { transition: transform 0.1s ease, opacity 0.1s ease; }
+        .nav-click-effect:active { transform: scale(0.96); opacity: 0.8; }
+
+        #cursor-tooltip {
+            pointer-events: none;
+            position: fixed;
+            z-index: 9999;
+            padding: 4px 10px;
+            background: #a413ec;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
 
 <body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white">
+    <div id="cursor-tooltip"></div>
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
         <header class="w-full border-b border-solid border-b-[#332839]/30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md sticky top-0 z-50">
@@ -70,8 +115,9 @@
             <div class="flex flex-col gap-5 px-8 py-8">
                 <div class="flex flex-col gap-5 px-8 py-8">
                     <a href="index.html" class="nav-click-effect text-lg font-medium">Home</a>
-                    <a href="aboutme.html" class="nav-click-effect text-lg font-medium">About Me</a>
-                    <a href="projects.html" class="nav-click-effect text-lg font-bold text-primary">Contact</a>
+                    <a href="aboutme.html" class="nav-click-effect text-lg font-bold text-primary">About Me</a>
+                    <a href="contact.html" class="nav-click-effect text-lg font-medium">Contact</a>
+                    
                     <a href="contact.html" class="nav-click-effect text-lg font-medium underline">My Projects</a>
             </div>
         </div>
@@ -265,24 +311,86 @@
             </section>
         </main>
 
-        <footer class="w-full border-t border-gray-200 dark:border-white/10 bg-background-light dark:bg-background-dark py-12">
-            <div class="max-w-7xl mx-auto px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-2 text-slate-900 dark:text-white">
-                    <span class="material-symbols-outlined text-primary">hexagon</span>
-                    <span class="font-bold">Alex Sterling</span>
-                </div>
-                <div class="flex gap-8">
-                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">LinkedIn</a>
-                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">Dribbble</a>
-                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">Behance</a>
-                    <a class="text-slate-500 hover:text-primary transition-colors" href="#">Instagram</a>
-                </div>
-                <div class="text-sm text-slate-500">
-                    © 2023 Alex Sterling. All rights reserved.
+        <footer class="w-full border-t border-[#332839] py-8 bg-[#161118]">
+            <div class="layout-container flex justify-center px-6 lg:px-10">
+                <div class="w-full max-w-[1200px] flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-2 text-white/50">
+                        <a href="index.html" class="nav-click-effect cursor-pointer text-sm font-medium">Emith Dissanayake</a>
+                    </div>
+                    <div class="flex gap-6">
+                        <a class="nav-click-effect text-[#b09db9] hover:text-primary transition-colors tooltip-trigger" data-tooltip="LinkedIn" href="https://www.linkedin.com/in/emithhansana/">
+                            <span class="material-symbols-outlined">web</span>
+                        </a>
+                        <a class="nav-click-effect text-[#b09db9] hover:text-primary transition-colors tooltip-trigger" data-tooltip="Email" href="mailto:diss0006@algonquinlive.com">
+                            <span class="material-symbols-outlined">mail</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tooltip Logic
+            const tooltip = document.getElementById('cursor-tooltip');
+            const triggers = document.querySelectorAll('.tooltip-trigger');
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('mouseenter', () => {
+                    tooltip.textContent = trigger.getAttribute('data-tooltip');
+                    tooltip.style.opacity = '1';
+                });
+                trigger.addEventListener('mousemove', (e) => {
+                    tooltip.style.left = (e.clientX + 15) + 'px';
+                    tooltip.style.top = (e.clientY + 15) + 'px';
+                });
+                trigger.addEventListener('mouseleave', () => { tooltip.style.opacity = '0'; });
+            });
+
+            // Hamburger Menu Logic
+            const btn = document.getElementById('menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+
+            btn.addEventListener('click', () => {
+                const isOpen = menu.classList.toggle('open');
+                icon.textContent = isOpen ? 'close' : 'menu';
+            });
+
+            // Filtering Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+                    
+                    // Button UI Toggle
+                    filterBtns.forEach(btn => {
+                        btn.classList.replace('bg-primary', 'bg-[#332839]');
+                        const p = btn.querySelector('p');
+                        p.classList.replace('text-white', 'text-[#b09db9]');
+                        p.classList.replace('font-bold', 'font-medium');
+                    });
+                    button.classList.replace('bg-[#332839]', 'bg-primary');
+                    const activeP = button.querySelector('p');
+                    activeP.classList.replace('text-[#b09db9]', 'text-white');
+                    activeP.classList.replace('font-medium', 'font-bold');
+
+                    // Filter Card Animation
+                    cards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            card.classList.remove('is-hidden');
+                            card.animate([{ opacity: 0, transform: 'scale(0.9)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 300 });
+                        } else {
+                            card.classList.add('is-hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
