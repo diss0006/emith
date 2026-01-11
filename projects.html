@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Portfolio - Selected Works</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a413ec",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#1c1022",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1c1022;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #332839;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a413ec;
+        }
+
+        .project-card {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .is-hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-x-hidden">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <div class="w-full border-b border-solid border-b-[#332839]/30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md sticky top-0 z-50">
+            <div class="layout-container flex justify-center">
+                <div class="flex max-w-[1200px] flex-1 items-center justify-between px-6 py-4 lg:px-10">
+                    <div class="flex items-center gap-2 text-[#111418] dark:text-white">
+                        <a href="index.html" class="cursor-pointer">
+                            <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] font-display pl-1">Emith Dissanayake</h2>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-8">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Work</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Resume</a>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="hidden sm:flex h-10 cursor-pointer items-center justify-center rounded-lg px-4 bg-transparent border border-[#332839] hover:border-primary hover:text-primary text-sm font-bold transition-all">
+                            <span class="truncate">Contact</span>
+                        </button>
+                        <button class="flex h-10 cursor-pointer items-center justify-center rounded-lg px-6 bg-primary hover:bg-primary/90 text-white text-sm font-bold shadow-[0_0_15px_rgba(164,19,236,0.3)] transition-all">
+                            <span class="truncate">Hire Me</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="flex-1 flex flex-col items-center w-full px-6 py-10 lg:px-10">
+            <div class="w-full max-w-[1200px] flex flex-col gap-10">
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col gap-4 max-w-3xl">
+                        <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em] text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">
+                            Selected Works
+                        </h1>
+                        <p class="text-[#b09db9] text-lg font-normal leading-relaxed max-w-2xl">
+                            Digital experiences crafted with precision and passion. Explore a collection of multimedia projects ranging from interface design to motion graphics and immersive branding.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3" id="filter-controls">
+                        <button data-filter="all" class="filter-btn flex h-9 items-center justify-center rounded-full bg-primary px-5 transition-all hover:bg-[#4a3b52] hover:border-primary/30">
+                            <p class="text-white text-sm font-bold">All Works</p>
+                        </button>
+                        <button data-filter="UI/UX" class="filter-btn flex h-9 items-center justify-center rounded-full bg-[#332839] px-5 transition-all border border-transparent hover:bg-[#4a3b52] hover:border-primary/30">
+                            <p class="text-[#b09db9] text-sm font-medium">UI/UX</p>
+                        </button>
+                        <button data-filter="Motion" class="filter-btn flex h-9 items-center justify-center rounded-full bg-[#332839] px-5 transition-all hover:bg-[#4a3b52] hover:border-primary/30">
+                            <p class="text-[#b09db9] text-sm font-medium">Motion</p>
+                        </button>
+                        <button data-filter="Branding" class="filter-btn flex h-9 items-center justify-center rounded-full bg-[#332839] px-5 transition-all hover:bg-[#4a3b52] hover:border-primary/30">
+                            <p class="text-[#b09db9] text-sm font-medium">Branding</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-6" id="project-grid">
+                    <a href="kolt.html" data-category="UI/UX" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(66.66%-12px)] h-[350px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800");'></div>
+                        <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">UI/UX</span>
+                                <span class="bg-white/10 backdrop-blur-sm text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Figma</span>
+                            </div>
+                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Kolt Dashboard</h3>
+                            <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">A comprehensive SaaS interface for modern data analytics.</p>
+                        </div>
+                    </a>
+
+                    <a href="nike.html" data-category="Motion" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-12px)] h-[350px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800");'></div>
+                        <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Motion</span>
+                                <span class="bg-white/10 backdrop-blur-sm text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">After Effects</span>
+                            </div>
+                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Nike Air Max Commercial</h3>
+                            <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">High-energy kinetic typography and 3D product visualization.</p>
+                        </div>
+                    </a>
+
+                    <a href="branding.html" data-category="Branding" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-16px)] h-[300px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800");'></div>
+                        <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Branding</span>
+                            </div>
+                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Lumina Identity</h3>
+                            <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">Brand strategy and visual identity for a tech startup.</p>
+                        </div>
+                    </a>
+
+                    <a href="mobile-app.html" data-category="UI/UX" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-16px)] h-[300px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800");'></div>
+                        <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">UI/UX</span>
+                            </div>
+                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Traveler App</h3>
+                            <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">Redesigning the nomad travel experience.</p>
+                        </div>
+                    </a>
+
+                    <a href="social-media.html" data-category="Motion" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-16px)] h-[300px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800");'></div>
+                        <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Motion</span>
+                            </div>
+                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Social Media Kit</h3>
+                            <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">Dynamic video templates for high-conversion ads.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <section class="w-full px-6 py-20 lg:py-28 bg-[#1c1022] relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+            <div class="layout-container flex justify-center relative z-10">
+                <div class="flex flex-col items-center text-center gap-8 max-w-[720px]">
+                    <h2 class="text-white text-3xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
+                        Ready to start a project?
+                    </h2>
+                    <p class="text-[#b09db9] text-lg font-normal leading-relaxed max-w-[600px]">
+                        I am currently open to full-time opportunities and freelance collaborations. Let's build something extraordinary together.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <button class="flex h-12 min-w-[160px] cursor-pointer items-center justify-center rounded-lg px-8 bg-primary hover:bg-primary/90 text-white text-base font-bold shadow-[0_0_20px_rgba(164,19,236,0.4)] transition-all">
+                            Contact Me
+                        </button>
+                        <button class="flex h-12 min-w-[160px] cursor-pointer items-center justify-center rounded-lg px-8 bg-[#332839] hover:bg-[#4a3b52] text-white text-base font-bold transition-all">
+                            Download Resume
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="w-full border-t border-[#332839] py-8 bg-[#161118]">
+            <div class="layout-container flex justify-center px-6 lg:px-10">
+                <div class="w-full max-w-[1200px] flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-2 text-white/50">
+                        <a href="index.html" class="cursor-pointer">
+                            <span class="text-sm font-medium">Emith Dissanayake</span>
+                        </a>
+                    </div>
+                    <div class="flex gap-6">
+                        <a class="text-[#b09db9] hover:text-primary transition-colors" href="#">
+                            <span class="sr-only">LinkedIn</span>
+                            <span class="material-symbols-outlined">web</span>
+                        </a>
+                        <a class="text-[#b09db9] hover:text-primary transition-colors" href="#">
+                            <span class="sr-only">Instagram</span>
+                            <span class="material-symbols-outlined">mail</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.project-card');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const filter = button.getAttribute('data-filter');
+
+                    buttons.forEach(btn => {
+                        btn.classList.replace('bg-primary', 'bg-[#332839]');
+                        const p = btn.querySelector('p');
+                        p.classList.replace('text-white', 'text-[#b09db9]');
+                        p.classList.replace('font-bold', 'font-medium');
+                    });
+                    button.classList.replace('bg-[#332839]', 'bg-primary');
+                    const activeP = button.querySelector('p');
+                    activeP.classList.replace('text-[#b09db9]', 'text-white');
+                    activeP.classList.replace('font-medium', 'font-bold');
+
+                    const positions = new Map();
+                    cards.forEach(card => {
+                        if (!card.classList.contains('is-hidden')) {
+                            positions.set(card, card.getBoundingClientRect());
+                        }
+                    });
+
+                    cards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            card.classList.remove('is-hidden');
+                            card.style.opacity = "1";
+                        } else {
+                            card.classList.add('is-hidden');
+                            card.style.opacity = "0";
+                        }
+                    });
+
+                    cards.forEach(card => {
+                        if (card.classList.contains('is-hidden')) return;
+
+                        const oldPos = positions.get(card);
+                        const newPos = card.getBoundingClientRect();
+
+                        if (oldPos) {
+                            const deltaX = oldPos.left - newPos.left;
+                            const deltaY = oldPos.top - newPos.top;
+
+                            if (deltaX !== 0 || deltaY !== 0) {
+                                card.animate([
+                                    { transform: `translate(${deltaX}px, ${deltaY}px)` },
+                                    { transform: 'translate(0, 0)' }
+                                ], {
+                                    duration: 500,
+                                    easing: 'cubic-bezier(0.2, 1, 0.3, 1)'
+                                });
+                            }
+                        } else {
+                            card.animate([
+                                { opacity: 0, transform: 'scale(0.8)' },
+                                { opacity: 1, transform: 'scale(1)' }
+                            ], { duration: 400 });
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

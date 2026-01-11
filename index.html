@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Emith Dissanayake - Portfolio</title>
-<link rel="icon" href="images/favicon.png" type="image/png">
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Emith Dissanayake - Portfolio</title>
+    
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -26,208 +28,153 @@
                         "display": ["Spline Sans", "sans-serif"],
                         "body": ["Noto Sans", "sans-serif"],
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
                 },
             },
         }
     </script>
+
+    <script>
+        function downloadResume() {
+            const link = document.createElement('a');
+            link.href = 'emith_dissanayake_resume.pdf';
+            link.download = 'emith_dissanayake_resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function viewmyprojs() {
+            window.location.href = 'projects.html';
+        }
+    </script>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col">
-<header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-[#332839] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
-<div class="px-4 md:px-10 lg:px-40 py-3 flex items-center justify-between">
-<div class="flex items-center gap-4">
-<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] block">Emith Dissanayake</h2>
-</div>
-<div class="flex items-center gap-4 md:gap-8">
-<nav class="hidden md:flex items-center gap-6">
-<a class="text-sm font-medium hover:text-primary transition-colors duration-200" href="#">Work</a>
-<a class="text-sm font-medium hover:text-primary transition-colors duration-200" href="#">About</a>
-<a class="text-sm font-medium hover:text-primary transition-colors duration-200" href="#">Resume</a>
-</nav>
-<button class="flex items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary/90 transition-all text-white text-sm font-bold tracking-[0.015em] shadow-[0_0_15px_rgba(164,19,236,0.3)]">
-<span class="truncate">Let's Talk</span>
-</button>
-</div>
-</div>
-</header>
-<main class="flex-grow flex flex-col items-center w-full">
-<div class="layout-container w-full max-w-[1280px] px-4 md:px-10 lg:px-40 flex flex-col">
-<section class="@container py-12 md:py-20">
-<div class="flex flex-col-reverse gap-8 @[864px]:flex-row @[864px]:items-center">
-<div class="flex flex-col gap-6 flex-1 @[864px]:pr-8">
-<div class="flex flex-col gap-2 text-left">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 w-fit border border-green-500/20 mb-2">
-<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-<span class="text-xs font-bold text-green-500 uppercase tracking-wider">Available for hire</span>
-</div>
-<h1 class="main-headd text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-500">
-    Emith, A Passionate Interactive Media Designer
+
+    <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-[#332839] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+        <div class="px-4 md:px-10 lg:px-40 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="cursor-pointer">
+                    <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] block">Emith Dissanayake</h2>
+                </a>
+            </div>
+            <div class="flex items-center gap-4 md:gap-8">
+                <button onclick="viewmyprojs()" class="flex items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary/60 transition-all text-white text-sm font-bold tracking-[0.015em] shadow-[0_0_15px_rgba(164,19,236,0.3)]">
+                    <span class="truncate">My Projects</span>
+                </button>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-sm font-medium hover:text-primary transition-colors duration-200" href="#">About Me</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors duration-200" href="#">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center w-full">
+        <div class="layout-container w-full max-w-[1280px] px-4 md:px-10 lg:px-40 flex flex-col">
+            
+            <section class="@container py-12 md:py-20">
+                <div class="flex flex-col-reverse gap-8 @[864px]:flex-row @[864px]:items-center">
+                    <div class="flex flex-col gap-6 flex-1 @[864px]:pr-8">
+                        <div class="flex flex-col gap-2 text-left">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 w-fit border border-green-500/20 mb-2">
+                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                <span class="text-xs font-bold text-green-500 uppercase tracking-wider">Available for hire</span>
+                            </div>
+                            <h1 class="main-headd text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-500">
+                                Emith, A Passionate Interactive Media Designer
                             </h1>
-<h2 class="text-text-secondary text-base md:text-lg font-normal leading-relaxed max-w-[600px]">
-    With unique skills in UX/UI, Graphics Design, Web Design and many more.
+                            <h2 class="text-text-secondary text-base md:text-lg font-normal leading-relaxed max-w-[600px]">
+                                With unique skills in UX/UI, Graphics Design, Web Design and many more.
                             </h2>
-</div>
-<div class="flex flex-wrap gap-4 pt-2">
-<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary/90 text-white font-bold transition-transform hover:scale-105 shadow-lg shadow-primary/25">
-<span>View Selected Works</span>
-</button>
-<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-transparent border border-[#332839] hover:bg-[#332839] hover:border-[#4a3b52] text-white font-medium transition-all group">
-<span class="mr-2">Download Resume</span>
-<span class="material-symbols-outlined text-lg group-hover:translate-y-0.5 transition-transform">download</span>
-</button>
-</div>
-</div>
-<div class="flex-1 w-full relative group perspective-1000">
-<div class="absolute -inset-1 bg-gradient-to-r from-green-500 to-green-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-<div class="relative w-full aspect-video md:aspect-square lg:aspect-[4/3] bg-surface-dark rounded-xl overflow-hidden border border-[#332839] shadow-2xl">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Abstract 3D digital art showing purple geometric shapes floating in dark space" style='background-image: url(images/wewew.png);'>
-<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent flex items-end p-6">
-<div class="flex items-center gap-2 text-white/80">
-<span class="material-symbols-outlined animate-spin text-sm" style="animation-duration: 3s;">data_usage</span>
-<span class="text-xs font-mono uppercase tracking-widest">WebGL Experiment 04</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- <div class="flex flex-col gap-2 pt-10 pb-6 px-1">
-<div class="flex items-center justify-between">
-<h2 class="text-2xl md:text-3xl font-bold leading-tight tracking-[-0.015em]">Recent Experiments</h2>
-<a class="hidden sm:flex items-center gap-1 text-sm text-primary font-medium hover:underline" href="#">
-                        View All Projects
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-<p class="text-text-secondary text-sm">A curated selection of motion, code, and design.</p>
-</div> -->
-<!-- <section class="w-full pb-12 relative">
-<div class="absolute top-1/2 -left-5 z-10 hidden md:block">
-<button class="bg-surface-dark border border-[#332839] text-white p-2 rounded-full hover:bg-primary hover:border-primary transition-colors shadow-lg">
-<span class="material-symbols-outlined block">arrow_back</span>
-</button>
-</div>
-<div class="absolute top-1/2 -right-5 z-10 hidden md:block">
-<button class="bg-surface-dark border border-[#332839] text-white p-2 rounded-full hover:bg-primary hover:border-primary transition-colors shadow-lg">
-<span class="material-symbols-outlined block">arrow_forward</span>
-</button>
-</div>
-<div class="flex overflow-x-auto pb-6 -mx-4 px-4 md:px-0 md:mx-0 gap-6 snap-x snap-mandatory scroll-smooth [&amp;::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-<div class="snap-start flex-none w-[85vw] md:w-[400px] group cursor-pointer">
-<div class="flex flex-col gap-4 h-full bg-surface-dark/50 border border-[#332839] p-3 rounded-xl hover:border-primary/50 transition-colors duration-300">
-<div class="w-full aspect-video rounded-lg overflow-hidden relative">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Neon colored 3D abstract shapes rendered in octane render" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNXiOT_Iw8ur6QhpdoUrTx4GQiparOpCawEMdMtEvsGiFGFyvjd_o49sQ0bVNjX5n_62pg-MlvYF29QNLKE2Fdk7DW6CYyecRU62W0_aSF1ThI2wK_uJgBLvMCa6zSAenjK7IuZsz4BLLPkPlN5muDkwtvRCfTajmvXtTYzpoTI3T4t9pnxUcauzgSEORQjJwMRdbLRykeVEV76Bxfh5aAdLIIJiBz-tIttqwQfxpCsy3S6Euv1AASF2tfCrrVt6fNQbWjQRoI6i1B");'>
-</div>
-<div class="absolute top-2 right-2 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white border border-white/10">
-                                    Motion
+                        </div>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <button onclick="viewmyprojs()" class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary/60 text-white font-bold transition-transform hover:scale-105 shadow-lg shadow-primary/25">
+                                <span>View My Work!</span>
+                            </button>
+                            <button onclick="downloadResume()" class="flex items-center justify-center rounded-lg h-12 px-6 bg-transparent border border-[#332839] hover:bg-[#332839] hover:border-[#4a3b52] text-white font-medium transition-all group">
+                                <span class="mr-2">Download Resume</span>
+                                <span class="material-symbols-outlined text-lg group-hover:translate-y-0.5 transition-transform">download</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 w-full relative group perspective-1000">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-green-500 to-green-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                        <a href="ux.html" class="relative block w-full aspect-video md:aspect-square lg:aspect-[4/3] bg-surface-dark rounded-xl overflow-hidden border border-[#332839] shadow-2xl">
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" style='background-image: url(images/wewew.png);'>
+                                <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent flex items-end p-6">
+                                    <div class="flex items-center gap-2 text-white/80">
+                                        <span class="material-symbols-outlined animate-spin text-sm" style="animation-duration: 3s;">data_usage</span>
+                                        <span class="text-xs font-mono uppercase tracking-widest">LATEST PROJECT - Pawsitive Futures UX Design</span>
+                                    </div>
                                 </div>
-</div>
-<div class="px-1 pb-2">
-<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Project Alpha: Kinetic Type</h3>
-<p class="text-text-secondary text-sm mt-1">Cinema 4D / After Effects</p>
-</div>
-</div>
-</div>
-<div class="snap-start flex-none w-[85vw] md:w-[400px] group cursor-pointer">
-<div class="flex flex-col gap-4 h-full bg-surface-dark/50 border border-[#332839] p-3 rounded-xl hover:border-primary/50 transition-colors duration-300">
-<div class="w-full aspect-video rounded-lg overflow-hidden relative">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Virtual reality headset view of a cyberpunk city interface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVQJ69WS7WVKGjx4SuPMx6BGMRhpCWSxZ_VLZOhT9l8DZo_KFy6ALHAzlj_chg_M0qxwaKQfbzaHB8eCSGl6N_muYmSbWwhqC8MK-ryghpkRBCPis0ydLZ3lMCrdB0aI8gi09dw6xjo589YHgfQnbF3pyh4YS-NK5sO7Q_Jnx9CjeNvyYGPneZNM7izrFSdZl-IlfLa2-l0lOHAHszbIg236hVFRSyZWe3wEfPKzebBDv8UEeL-k-w0H0Kku5tHxiuoJuSm6llH4eg");'>
-</div>
-<div class="absolute top-2 right-2 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white border border-white/10">
-                                    Interactive
-                                </div>
-</div>
-<div class="px-1 pb-2">
-<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Neon Dreams: VR Experience</h3>
-<p class="text-text-secondary text-sm mt-1">Unity / C# / Oculus</p>
-</div>
-</div>
-</div>
-<div class="snap-start flex-none w-[85vw] md:w-[400px] group cursor-pointer">
-<div class="flex flex-col gap-4 h-full bg-surface-dark/50 border border-[#332839] p-3 rounded-xl hover:border-primary/50 transition-colors duration-300">
-<div class="w-full aspect-video rounded-lg overflow-hidden relative">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Clean minimalist mobile app interface design layout" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMmKp0bU3R20EtSgtt6BKfxbydYPQN4s6XK2MB681R2v5WosvpfXWJ5jO1XkL5U1jWSp4X-tCkPcUWabsIrO9uPvrf3lupElE59UHNR4Qwfbkzluo1b52Q7kSvPNkLGHDOJDqIG4nb-ARD7quJiW0P7q5j0HrRqXJHBcEbBAxffS4Ia_VSa86mnYr3KMqquzeISU2auNnwfR9UU4BnEFb3pVNy6s3ezysRd_vDdaLW4ejYY1bN7tT_aiDKDOK6iolQC68BRFu1tErK");'>
-</div>
-<div class="absolute top-2 right-2 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white border border-white/10">
-                                    UI/UX
-                                </div>
-</div>
-<div class="px-1 pb-2">
-<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">CleanSlate: FinTech App</h3>
-<p class="text-text-secondary text-sm mt-1">Figma / Protopie</p>
-</div>
-</div>
-</div>
-<div class="snap-start flex-none w-[85vw] md:w-[400px] group cursor-pointer">
-<div class="flex flex-col gap-4 h-full bg-surface-dark/50 border border-[#332839] p-3 rounded-xl hover:border-primary/50 transition-colors duration-300">
-<div class="w-full aspect-video rounded-lg overflow-hidden relative">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Generative art pattern with swirling colorful particles" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuoRBftMmD5kyBDcD82wejbesWwcHflmMKIy8R4gUKiImNPTL8-LWnM5Xm-tQaiy_653CbwIp_ZzxWPSWfPrbwxvyIPLVxJwZ-iP0dJNUjHhcB1GQyCAbdXDkoPhJX1JL53pwlekRV2OXj39AQZXTijnNA3jAMZwMgOrzJ__iuuJcvmdlFUScUhlL5z-UgG1UIcCN0JjZRupdy9fw3KU07HnfDHULZZP1mWzK7ljuSCnGlPmDjDmDpYCA58yEp6WFWcAyTJk40vjs0");'>
-</div>
-<div class="absolute top-2 right-2 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white border border-white/10">
-                                    Code Art
-                                </div>
-</div>
-<div class="px-1 pb-2">
-<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Generative Noise</h3>
-<p class="text-text-secondary text-sm mt-1">Processing / Java</p>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-<section class="py-12">
-<div class="bg-gradient-to-br from-[#231828] to-background-dark border border-[#332839] rounded-2xl p-6 md:p-10 relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
-<div class="flex flex-col-reverse md:flex-row items-center gap-10 relative z-10">
-<div class="flex-1 flex flex-col gap-6">
-<div class="flex flex-col gap-3">
-<h2 class="text-3xl font-bold leading-tight">Beyond the Pixels</h2>
-<div class="h-1 w-20 bg-primary rounded-full"></div>
-<p class="text-text-secondary text-base md:text-lg font-normal leading-relaxed mt-2">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-12">
+                <div class="bg-gradient-to-br from-[#231828] to-background-dark border border-[#332839] rounded-2xl p-6 md:p-10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
+                    <div class="flex flex-col-reverse md:flex-row items-center gap-10 relative z-10">
+                        <div class="flex-1 flex flex-col gap-6">
+                            <div class="flex flex-col gap-3">
+                                <h2 class="text-3xl font-bold leading-tight">Beyond the Pixels</h2>
+                                <div class="h-1 w-20 bg-primary rounded-full"></div>
+                                <p class="text-text-secondary text-base md:text-lg font-normal leading-relaxed mt-2">
                                     I am a Digital Multimedia Design student with a passion for blending code and canvas. My work explores the intersection of user experience and visual storytelling. I don't just design interfaces; I craft digital experiences that leave a lasting impression.
                                 </p>
-</div>
-<div class="flex gap-4 items-center">
-<button class="flex items-center gap-2 text-white bg-surface-dark border border-[#332839] hover:border-primary hover:text-primary px-5 py-2.5 rounded-lg transition-all">
-<span class="font-medium text-sm">Read Full Bio</span>
-<span class="material-symbols-outlined text-lg">arrow_right_alt</span>
-</button>
-</div>
-</div>
-<div class="w-full md:w-1/3 aspect-[3/4] md:aspect-square bg-cover bg-center rounded-xl shadow-2xl border border-[#332839] rotate-2 hover:rotate-0 transition-transform duration-300" data-alt="Portrait of the designer in a dark artistic studio setting with colored lighting" style='background-image: url("images/mypic.jpg");'>
-</div>
-</div>
-</div>
-</section>
-</div>
-</main>
-<footer class="w-full border-t border-[#332839] bg-background-dark pt-12 pb-8">
-<div class="layout-container max-w-[1280px] px-4 md:px-10 lg:px-40 mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2 text-white">
-<span class="text-xl font-bold tracking-tight">Emith Dissanayake</span>
-</div>
-<p class="text-text-secondary text-sm max-w-xs">UX/UI Designer | Web Designer | Graphics Designer </p>
-</div>
-<div class="flex gap-6">
-<a class="text-text-secondary hover:text-primary transition-colors flex flex-col items-center gap-1 group" href="#">
-<span class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-dark border border-[#332839] group-hover:border-primary transition-colors">
-<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-</span>
-<span class="text-xs">LinkedIn</span>
-</a>
-<a class="text-text-secondary hover:text-primary transition-colors flex flex-col items-center gap-1 group" href="#">
-<span class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-dark border border-[#332839] group-hover:border-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">mail</span>
-</span>
-<span class="text-xs">Email</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</footer>
-</body></html>
+                            </div>
+                            <div class="flex gap-4 items-center">
+                                <button class="flex items-center gap-2 text-white bg-surface-dark border border-[#332839] hover:border-primary hover:text-primary px-5 py-2.5 rounded-lg transition-all">
+                                    <span class="font-medium text-sm">Read Full Bio</span>
+                                    <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/3 aspect-[3/4] md:aspect-square bg-cover bg-center rounded-xl shadow-2xl border border-[#332839] rotate-2 hover:rotate-0 transition-transform duration-300" style='background-image: url("images/mypic.jpg");'></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-[#332839] py-8 bg-[#161118]">
+        <div class="layout-container flex justify-center px-6 lg:px-10">
+            <div class="w-full max-w-[1200px] flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2 text-white/50">
+                    <a href="index.html" class="cursor-pointer">
+                        <span class="text-sm font-medium">Emith Dissanayake</span>
+                    </a>
+                </div>
+                <div class="flex gap-6">
+                    <a class="text-text-secondary hover:text-primary transition-colors flex flex-col items-center gap-1 group" href="https://www.linkedin.com/in/emithhansana/">
+                        <span class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-dark border border-[#332839] group-hover:border-primary transition-colors">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                            </svg>
+                        </span>
+                        <span class="text-xs">LinkedIn</span>
+                    </a>
+                    <a class="text-text-secondary hover:text-primary transition-colors flex flex-col items-center gap-1 group" href="#">
+                        <span class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-dark border border-[#332839] group-hover:border-primary transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">mail</span>
+                        </span>
+                        <span class="text-xs">Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
