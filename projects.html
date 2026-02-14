@@ -73,41 +73,41 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-x-hidden">
     <div id="cursor-tooltip"></div>
+    <header class="w-full border-b border-solid border-b-[#332839]/30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md sticky top-0 z-50">
+        <div class="layout-container flex justify-center">
+            <div class="flex max-w-[1200px] flex-1 items-center justify-between px-6 py-4 lg:px-10">
+                <div class="flex items-center gap-2 text-[#111418] dark:text-white">
+                    <a href="index.html" class="cursor-pointer nav-click-effect">
+                        <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] font-display pl-1">Emith Dissanayake</h2>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="nav-click-effect text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                    <a class="nav-click-effect text-sm font-medium hover:text-primary transition-colors" href="aboutme.html">About Me</a>
+                    <a class="nav-click-effect text-sm font-medium hover:text-primary text-primary transition-colors" href="projects.html">My Projects</a>
+                    <a href="contact.html" class="nav-click-effect flex h-10 cursor-pointer items-center justify-center rounded-lg px-4 bg-transparent border border-[#332839] hover:border-primary hover:text-primary text-sm font-bold transition-all">
+                        Contact
+                    </a>
+                </div>
 
+                <button id="menu-btn" class="md:hidden flex items-center p-2 text-primary nav-click-effect">
+                    <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden bg-background-dark border-t border-[#332839]/30">
+            <div class="flex flex-col gap-5 px-8 py-8">
+                <a href="index.html" class="nav-click-effect text-lg font-medium">Home</a>
+                <a href="aboutme.html" class="nav-click-effect text-lg font-medium">About Me</a>
+                <a href="projects.html" class="nav-click-effect text-lg font-bold text-primary">My Projects</a>
+                <a href="contact.html" class="nav-click-effect text-lg font-medium underline">Contact</a>
+            </div>
+        </div>
+    </header>
     <div class="relative flex min-h-screen w-full flex-col">
-        <header class="w-full border-b border-solid border-b-[#332839]/30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md sticky top-0 z-50">
-            <div class="layout-container flex justify-center">
-                <div class="flex max-w-[1200px] flex-1 items-center justify-between px-6 py-4 lg:px-10">
-                    <div class="flex items-center gap-2 text-[#111418] dark:text-white">
-                        <a href="index.html" class="cursor-pointer nav-click-effect">
-                            <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] font-display pl-1">Emith Dissanayake</h2>
-                        </a>
-                    </div>
-                    
-                    <div class="hidden md:flex items-center gap-8">
-                        <a class="nav-click-effect text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
-                        <a class="nav-click-effect text-sm font-medium hover:text-primary transition-colors" href="aboutme.html">About Me</a>
-                        <a class="nav-click-effect text-sm font-medium hover:text-primary text-primary transition-colors" href="projects.html">My Projects</a>
-                        <a href="contact.html" class="nav-click-effect flex h-10 cursor-pointer items-center justify-center rounded-lg px-4 bg-transparent border border-[#332839] hover:border-primary hover:text-primary text-sm font-bold transition-all">
-                            Contact
-                        </a>
-                    </div>
-
-                    <button id="menu-btn" class="md:hidden flex items-center p-2 text-primary nav-click-effect">
-                        <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
-                    </button>
-                </div>
-            </div>
-            
-            <div id="mobile-menu" class="md:hidden bg-background-dark border-t border-[#332839]/30">
-                <div class="flex flex-col gap-5 px-8 py-8">
-                    <a href="index.html" class="nav-click-effect text-lg font-medium">Home</a>
-                    <a href="aboutme.html" class="nav-click-effect text-lg font-medium">About Me</a>
-                    <a href="projects.html" class="nav-click-effect text-lg font-bold text-primary">My Projects</a>
-                    <a href="contact.html" class="nav-click-effect text-lg font-medium underline">Contact</a>
-                </div>
-            </div>
-        </header>
+        
 
         <main class="flex-1 flex flex-col items-center w-full px-6 py-10 lg:px-10">
             <div class="w-full max-w-[1200px] flex flex-col gap-10">
@@ -117,7 +117,7 @@
                             My Projects
                         </h1>
                         <p class="text-[#b09db9] text-lg font-normal leading-relaxed max-w-2xl">
-                            Digital experiences crafted with precision and passion. Explore a collection of multimedia projects ranging from interface design to motion graphics and immersive branding.
+                            Personal and Academic projects that I have worked on during my college and prior.
                         </p>
                     </div>
 
@@ -126,10 +126,10 @@
                             <p class="text-white text-sm font-bold">All Projects</p>
                         </button>
                         <button data-filter="UI/UX" class="filter-btn nav-click-effect flex h-9 items-center justify-center rounded-full bg-[#332839] px-5 transition-all border border-transparent hover:border-primary/100">
-                            <p class="text-[#b09db9] text-sm font-medium">UI/UX</p>
+                            <p class="text-[#b09db9] text-sm font-medium">UX Design</p>
                         </button>
-                        <button data-filter="Motion" class="filter-btn nav-click-effect flex h-9 items-center justify-center rounded-full bg-[#332839] px-5 transition-all border border-transparent hover:border-primary/100">
-                            <p class="text-[#b09db9] text-sm font-medium">Motion</p>
+                        <button data-filter="Grphcs" class="filter-btn nav-click-effect flex h-9 items-center justify-center rounded-full bg-[#332839] px-5 transition-all border border-transparent hover:border-primary/100">
+                            <p class="text-[#b09db9] text-sm font-medium">Graphics Design</p>
                         </button>
                         <button data-filter="Branding" class="filter-btn nav-click-effect flex h-9 items-center justify-center rounded-full bg-[#332839] px-5 transition-all border border-transparent hover:border-primary/100">
                             <p class="text-[#b09db9] text-sm font-medium">Branding</p>
@@ -138,41 +138,51 @@
                 </div>
 
                 <div class="flex flex-wrap gap-6" id="project-grid">
-                    <a href="kolt.html" data-category="UI/UX" class="project-card nav-click-effect group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(66.66%-12px)] h-[350px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800");'></div>
+                    <a href="pawsitive.html" data-category="UI/UX" class="project-card nav-click-effect group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(66.66%-12px)] h-[350px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("images/pf.png");'></div>
                         <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                             <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
-                                <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">UI/UX</span>
+                                <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">UX Design</span>
+                                <span class="bg-white/10 backdrop-blur-sm text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Web Development</span>
                             </div>
-                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Kolt Dashboard</h3>
-                            <p class="text-[#b09db9] text-sm line-clamp-2">A comprehensive SaaS interface for modern data analytics.</p>
+                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Pawsitive Futures - UX Design (Academic Project) </h3>
+                            <p class="text-[#b09db9] text-sm line-clamp-2">A complete UX design process for the mock project "Pawsitive Futures", an animal adoption center, along with a demo website developed for three pages.</p>
                         </div>
                     </a>
 
-                    <a href="nike.html" data-category="Motion" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-12px)] h-[350px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800");'></div>
+                    <a href="graphics.html" data-category="Grphcs" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-12px)] h-[350px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("images/graphics.png");'></div>
                         <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                             <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
-                                <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Motion</span>
-                                <span class="bg-white/10 backdrop-blur-sm text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">After Effects</span>
+                                <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Graphics Design</span>
                             </div>
-                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Nike Air Max Commercial</h3>
-                            <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">High-energy kinetic typography and 3D product visualization.</p>
+                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Graphics Designs</h3>
+                            <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">Some of my graphics design work.</p>
                         </div>
                     </a>
 
-                    <a href="branding.html" data-category="Branding" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-16px)] h-[300px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800");'></div>
+                    <a href="https://drive.google.com/file/d/1voxi0uPVNUTEQXncX-hcZ_D12hsdY9Ey/view?usp=sharing" data-category="Branding" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-16px)] h-[300px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("images/feelsandf.png");'></div>
                         <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                             <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
                                 <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Branding</span>
                             </div>
-                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Lumina Identity</h3>
-                            <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">Brand strategy and visual identity for a tech startup.</p>
+                            <h3 class="text-white text-xl font-bold leading-tight mb-1">Feels & Flavors - Branding Package (Academic Project)</h3>
+                            <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">A complete mock branding package for a bakery.</p>
                         </div>
+
+                        <a href="https://drive.google.com/file/d/1JMaPX4dnD2RN7AAUyouK-mrXKmOAkKVO/view?usp=sharing" data-category="Branding" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-16px)] h-[300px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("images/sweetwater.png");'></div>
+                            <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                    <span class="bg-primary/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wider">Branding</span>
+                                </div>
+                                <h3 class="text-white text-xl font-bold leading-tight mb-1">Sweetwater - Branding Guide (Mock Case Study)</h3>
+                                <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">A fictional branding guide for the company "Sweetwater". Only used for studying purposes</p>
+                            </div>
                     </a>
 
-                    <a href="mobile-app.html" data-category="UI/UX" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-16px)] h-[300px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                    <!-- <a href="mobile-app.html" data-category="UI/UX" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-16px)] h-[300px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800");'></div>
                         <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                             <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
@@ -181,9 +191,9 @@
                             <h3 class="text-white text-xl font-bold leading-tight mb-1">Traveler App</h3>
                             <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">Redesigning the nomad travel experience.</p>
                         </div>
-                    </a>
+                    </a> -->
 
-                    <a href="social-media.html" data-category="Motion" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-16px)] h-[300px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
+                    <!-- <a href="social-media.html" data-category="Motion" class="project-card group block relative overflow-hidden rounded-xl bg-[#2a1d30] w-full md:w-[calc(33.33%-16px)] h-[300px] cursor-pointer border border-[#332839]/50 hover:border-primary/50 transition-colors">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800");'></div>
                         <div class="absolute bottom-0 p-6 w-full bg-gradient-to-t from-black/100 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                             <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
@@ -192,26 +202,17 @@
                             <h3 class="text-white text-xl font-bold leading-tight mb-1">Social Media Kit</h3>
                             <p class="text-[#b09db9] text-sm line-clamp-2 group-hover:text-white/90 transition-colors">Dynamic video templates for high-conversion ads.</p>
                         </div>
-                    </a>
+                    </a> -->
                     </div>
             </div>
         </main>
 
-        <section class="w-full px-6 py-20 lg:py-28 bg-[#1c1022] relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
-            <div class="layout-container flex justify-center relative z-10">
-                <div class="flex flex-col items-center text-center gap-8 max-w-[720px]">
-                    <h2 class="text-white text-3xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Ready to start a project?</h2>
-                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                        <a href="contact.html" class="nav-click-effect flex h-12 min-w-[160px] cursor-pointer items-center justify-center rounded-lg px-8 bg-primary hover:bg-primary/60 text-white text-base font-bold shadow-[0_0_20px_rgba(164,19,236,0.4)]">
-                            Contact Me
-                        </a>
-                        <a href="assets/emith_dissanayake_resume.pdf" download class="nav-click-effect flex h-12 min-w-[160px] cursor-pointer items-center justify-center rounded-lg px-8 bg-[#332839] hover:bg-[#4a3b52] text-white text-base font-bold">
-                            Download Resume
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <section id="contact" class="mt-32 p-12 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-transparent border border-white/5 text-center">
+            <h2 class="text-3xl font-bold mb-4">Interested in my work?</h2>
+            <p class="text-slate-400 mb-8 max-w-lg mx-auto">Open to co-op/internships for Summer 2026.</p>
+            <a href="contact.html"><button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-primary/20">
+                Reach Me Out!
+            </button></a>
         </section>
 
         <footer class="w-full border-t border-[#332839] py-8 bg-[#161118]">

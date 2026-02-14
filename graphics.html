@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Graphics Designs - Emith Dissanayake</title>
+    
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300..700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a413ec",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#1c1022",
+                    },
+                    fontFamily: {
+                        "sans": ["Spline Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .glass-effect {
+                @apply bg-background-dark/80 backdrop-blur-xl border-white/10;
+            }
+            .masonry-grid {
+                @apply columns-1 md:columns-2 lg:columns-3 gap-6;
+            }
+            .masonry-item {
+                @apply break-inside-avoid mb-6 relative cursor-pointer overflow-hidden rounded-xl bg-slate-800 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20;
+            }
+            .filter-btn {
+                @apply px-6 py-2 rounded-full text-sm font-medium border border-white/10 transition-colors bg-white/5 hover:bg-white/10;
+            }
+            .filter-btn-active {
+                @apply bg-primary text-white shadow-lg shadow-primary/20 border-transparent;
+            }
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1c1022; }
+        ::-webkit-scrollbar-thumb { background: #332839; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a413ec; }
+
+        .project-card { transition: opacity 0.3s ease, transform 0.3s ease; text-decoration: none; }
+        .is-hidden { display: none !important; }
+
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        #mobile-menu.open {
+            max-height: 300px;
+            opacity: 1;
+        }
+
+        /* Tactile Click Effect */
+        .nav-click-effect { transition: transform 0.1s ease, opacity 0.1s ease; }
+        .nav-click-effect:active { transform: scale(0.96); opacity: 0.8; }
+
+        #cursor-tooltip {
+            pointer-events: none;
+            position: fixed;
+            z-index: 9999;
+            padding: 4px 10px;
+            background: #a413ec;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-300">
+
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-background-dark/95 backdrop-blur-md flex items-center justify-center p-4 md:p-10 cursor-zoom-out">
+        <button class="absolute top-6 right-6 text-white nav-click-effect">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300">
+    </div>
+
+    <header class="w-full border-b border-solid border-b-[#332839]/30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md sticky top-0 z-50">
+        <div class="layout-container flex justify-center">
+            <div class="flex max-w-[1200px] flex-1 items-center justify-between px-6 py-4 lg:px-10">
+                <div class="flex items-center gap-2 text-[#111418] dark:text-white">
+                    <a href="index.html" class="cursor-pointer nav-click-effect">
+                        <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] font-display pl-1">Emith Dissanayake</h2>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="nav-click-effect text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                    <a class="nav-click-effect text-sm font-medium hover:text-primary transition-colors" href="aboutme.html">About Me</a>
+                    <a class="nav-click-effect text-sm font-medium hover:text-primary transition-colors" href="projects.html">My Projects</a>
+                    <a href="contact.html" class="nav-click-effect flex h-10 cursor-pointer items-center justify-center rounded-lg px-4 bg-transparent border border-[#332839] hover:border-primary hover:text-primary text-sm font-bold transition-all">
+                        Contact
+                    </a>
+                </div>
+
+                <button id="menu-btn" class="md:hidden flex items-center p-2 text-primary nav-click-effect">
+                    <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden bg-background-dark border-t border-[#332839]/30">
+            <div class="flex flex-col gap-5 px-8 py-8">
+                <a href="index.html" class="nav-click-effect text-lg font-medium">Home</a>
+                <a href="aboutme.html" class="nav-click-effect text-lg font-medium">About Me</a>
+                <a href="projects.html" class="nav-click-effect text-lg font-medium">My Projects</a>
+                <a href="contact.html" class="nav-click-effect text-lg font-medium underline">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div id="cursor-tooltip"></div>
+        <section class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
+                Some of my <span class="text-primary italic">Graphics Design</span> work.
+            </h1>
+            <p class="text-slate-500 dark:text-purple-200/60 text-lg max-w-2xl mx-auto mb-10">
+                Below are some of my graphics designs which I created using softwares including Adobe Illustrator and Adobe Photoshop.
+            </p>
+        </section>
+
+        <div class="masonry-grid" id="work">
+            <article class="masonry-item group">
+                <img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" src="images/graphics/artboard1.png" alt="NAADHI YouTube Banner"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 class="text-white text-xl font-bold">NAADHI (An Artist) - YouTube Channel Banner</h3>
+                </div>
+            </article>
+
+            <article class="masonry-item group">
+                <img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" src="images/graphics/banner2.png" alt="EmbiaZ YouTube Banner"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 class="text-white text-xl font-bold">EmbiaZ (YouTuber) - YouTube Channel Banner</h3>
+                </div>
+            </article>
+
+            <article class="masonry-item group">
+                <img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" src="images/graphics/embiaz.png" alt="EmbiaZ Logo"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 class="text-white text-xl font-bold">EmbiaZ (YouTuber) - YouTube Channel Logo</h3>
+                </div>
+            </article>
+
+            <article class="masonry-item group">
+                <img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" src="images/graphics/moodboard1.png" alt="Dog Rescue Moodboard"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 class="text-white text-xl font-bold">Freedom Dog Rescue - Moodboard (Academic Project)</h3>
+                </div>
+            </article>
+
+            <article class="masonry-item group">
+                <img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" src="images/graphics/poster.png" alt="Movie Poster"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 class="text-white text-xl font-bold">Movie Poster (Academic Project)</h3>
+                </div>
+            </article>
+
+            <article class="masonry-item group">
+                <img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" src="images/graphics/slicc.png" alt="Mascot 1"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 class="text-white text-xl font-bold">EmbiaZ (YouTuber) - Player Mascot</h3>
+                </div>
+            </article>
+
+            <article class="masonry-item group">
+                <img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" src="images/graphics/thicc.png" alt="Mascot 2"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 class="text-white text-xl font-bold">EmbiaZ (YouTuber) - Player Mascot</h3>
+                </div>
+            </article>
+
+            <article class="masonry-item group">
+                <img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" src="images/graphics/upsidedown.png" alt="UpsideDown Logo"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 class="text-white text-xl font-bold">Logo of a band - UpsideDown</h3>
+                </div>
+            </article>
+        </div>
+
+        <section id="contact" class="mt-32 p-12 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-transparent border border-white/5 text-center">
+            <h2 class="text-3xl font-bold mb-4">Interested in my work?</h2>
+            <p class="text-slate-400 mb-8 max-w-lg mx-auto">Open to co-op/internships for Summer 2026.</p>
+            <a href="contact.html"><button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-primary/20">
+                Reach Me Out!
+            </button></a>
+        </section>
+    </main>
+
+    <footer class="w-full border-t border-[#332839] py-8 bg-[#161118]">
+        <div class="layout-container flex justify-center px-6 lg:px-10">
+            <div class="w-full max-w-[1200px] flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2 text-white/50">
+                    <a href="index.html" class="nav-click-effect cursor-pointer text-sm font-medium">Emith Dissanayake</a>
+                </div>
+                <div class="flex gap-6">
+                    <a class="nav-click-effect text-[#b09db9] hover:text-primary transition-colors tooltip-trigger" data-tooltip="LinkedIn" href="https://www.linkedin.com/in/emithhansana/">
+                        <span class="material-symbols-outlined">web</span>
+                    </a>
+                    <a class="nav-click-effect text-[#b09db9] hover:text-primary transition-colors tooltip-trigger" data-tooltip="Email" href="mailto:diss0006@algonquinlive.com">
+                        <span class="material-symbols-outlined">mail</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+            lightboxImg.src = "";
+        }
+
+        // Click on item to open
+        document.querySelectorAll('.masonry-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                openLightbox(img.src);
+            });
+        });
+
+        // Click overlay to close
+        lightbox.addEventListener('click', closeLightbox);
+
+        // Close lightbox on Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tooltip Logic
+            const tooltip = document.getElementById('cursor-tooltip');
+            const triggers = document.querySelectorAll('.tooltip-trigger');
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('mouseenter', () => {
+                    tooltip.textContent = trigger.getAttribute('data-tooltip');
+                    tooltip.style.opacity = '1';
+                });
+                trigger.addEventListener('mousemove', (e) => {
+                    tooltip.style.left = (e.clientX + 15) + 'px';
+                    tooltip.style.top = (e.clientY + 15) + 'px';
+                });
+                trigger.addEventListener('mouseleave', () => { tooltip.style.opacity = '0'; });
+            });
+
+            // Hamburger Menu Logic
+            const btn = document.getElementById('menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+
+            btn.addEventListener('click', () => {
+                const isOpen = menu.classList.toggle('open');
+                icon.textContent = isOpen ? 'close' : 'menu';
+            });
+        });
+    </script>
+</body>
+</html>
