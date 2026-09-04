@@ -1,223 +1,320 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Emith Dissanayake - Portfolio</title>
-    
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#a413ec",
-                        "background-light": "#f7f6f8",
-                        "background-dark": "#1c1022",
-                        "surface-dark": "#2a1b32",
-                        "text-secondary": "#b09db9",
-                    },
-                    fontFamily: {
-                        "display": ["Spline Sans", "sans-serif"],
-                        "body": ["Noto Sans", "sans-serif"],
-                    },
-                },
-            },
-        }
-    </script>
-    <style>
-        #mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out;
-            opacity: 0;
-        }
-        #mobile-menu.open {
-            max-height: 400px;
-            opacity: 1;
-        }
-        /* Custom Click Feedback Class */
-        .nav-click-effect {
-            transition: transform 0.1s ease, opacity 0.1s ease;
-        }
-        .nav-click-effect:active {
-            transform: scale(0.95);
-            opacity: 0.7;
-        }
-    </style>
+<title>Emith Dissanayake - Interactive Media Designer</title>
+<meta name="description" content="Emith Dissanayake is an Interactive Media Design student in Ottawa working across UX research, brand, graphic design and front-end code.">
+<link rel="canonical" href="https://emith.ca/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emith.ca/">
+<meta property="og:title" content="Emith Dissanayake - Interactive Media Designer">
+<meta property="og:description" content="UX research, brand, graphic design and front-end code, handled end to end.">
+<meta property="og:image" content="https://emith.ca/images/pf.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#08080a">
+
+<link rel="icon" href="images/favicon.png" type="image/png">
+
+<!-- the three system faces. Geist, Geist Mono, Playfair, Oswald and Syne are
+     deferred: they exist only for the Polymath box, which runs after the intro. -->
+<link rel="preload" href="fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/main.css">
+
+<!-- Phosphor, the single icon family used on this site. No hand-drawn paths. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+<!-- The mesh has to be alive BEHIND the curtain before the curtain drops, so
+     it is revealed rather than faded in afterwards. Preloading it here means
+     it downloads alongside main.js instead of waiting for main.js to run and
+     then request it. -->
+<link rel="modulepreload" href="js/neon-mesh.js">
+
+<script>
+  /* Every intro-held state in the stylesheet is scoped to html.js, so a
+     visitor without JavaScript is served the finished page instead of a
+     black screen waiting for an animation that will never run. */
+  document.documentElement.classList.add('js', 'is-home');
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+</script>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col">
+<body class="is-intro">
 
-    <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-[#332839] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
-        <div class="px-4 md:px-10 lg:px-40 py-3 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <a href="index.html" class="cursor-pointer nav-click-effect">
-                    <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] block">Emith Dissanayake</h2>
-                </a>
+<a class="skip-link" href="#reel">Skip to content</a>
+
+<div class="site-nav">
+  <nav class="site-nav__inner" aria-label="Primary">
+    <span class="nav-cta glass is-disabled" aria-disabled="true">Discover me</span>
+
+    <div class="nav-icons glass">
+      <a class="navicon" href="aboutme.html">
+        <i class="ph ph-user" aria-hidden="true"></i>
+        <span class="navicon__label"><span>About me</span></span>
+        <span class="u-visually-hidden">About me</span>
+      </a>
+      <span class="navicon__sep" aria-hidden="true"></span>
+      <a class="navicon" href="contact.html">
+        <i class="ph ph-hand-waving" aria-hidden="true"></i>
+        <span class="navicon__label"><span>Contact</span></span>
+        <span class="u-visually-hidden">Contact</span>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ====================================================================
+       HERO
+       The page opens as a black screen. Five extruded letters arrive out of
+       depth, the black falls away to become the landform at the foot of the
+       section, and the supporting type follows it up.
+       ==================================================================== -->
+  <section class="hero" aria-labelledby="wordmark">
+
+    <!-- the field behind the curtain: Verlet cloth, pointer reactive -->
+    <canvas id="hero-mesh" aria-hidden="true"></canvas>
+
+    <div class="hero__stage">
+      <h1 class="wordmark" id="wordmark" aria-label="Emith"><span class="wm-logo" aria-hidden="true"><svg class="brandmark__svg" viewBox="0 0 1000 1000" focusable="false" aria-hidden="true"><circle class="brandmark__disc" cx="500" cy="500" r="445"/><path class="brandmark__glyph" d="M 889.479 515.507 A 280.35 280.35 0 1 1 721.282 179.113 A 222.5 222.5 0 0 0 478.983 433.577 L 790.555 354.723 L 540.528 556.667 A 222.5 222.5 0 0 0 889.479 515.507 Z"/></svg></span><span class="wm-slot" aria-hidden="true"><span class="wm-glyph">E</span></span><span class="wm-slot" aria-hidden="true"><span class="wm-glyph">M</span></span><span class="wm-slot" aria-hidden="true"><span class="wm-glyph">I</span></span><span class="wm-slot" aria-hidden="true"><span class="wm-glyph">T</span></span><span class="wm-slot" aria-hidden="true"><span class="wm-glyph">H</span></span></h1>
+
+      <div class="hero__rule" aria-hidden="true"></div>
+
+      <p class="hero__tagline">
+        <span class="u-visually-hidden">The Polymath</span>
+        <span class="tagline__mask" aria-hidden="true">
+          <span class="tagline__row">
+            <span class="tagline__lead">The</span>
+            <!-- the word is real text here, so it still reads with JS off -->
+            <span class="polybox"><span class="polybox__mask poly-f0">Polymath</span></span>
+          </span>
+        </span>
+      </p>
+    </div>
+
+    <!-- the curtain and the dune are one element: see css/main.css -->
+    <div class="curtain" aria-hidden="true">
+      <svg class="curtain__crest" viewBox="0 0 1440 130" preserveAspectRatio="none" focusable="false">
+        <path d="M0,96 C46,96 74,74 116,74 C158,74 178,104 214,104 C262,104 286,20 392,14 C470,9 520,52 604,72 C660,86 692,78 726,82 C752,85 768,94 812,94 C892,94 946,90 1014,76 C1092,60 1122,16 1214,12 C1288,9 1318,50 1358,64 C1390,74 1416,72 1440,68 L1440,130 L0,130 Z"/>
+        <path class="curtain__line" vector-effect="non-scaling-stroke"
+              d="M0,96 C46,96 74,74 116,74 C158,74 178,104 214,104 C262,104 286,20 392,14 C470,9 520,52 604,72 C660,86 692,78 726,82 C752,85 768,94 812,94 C892,94 946,90 1014,76 C1092,60 1122,16 1214,12 C1288,9 1318,50 1358,64 C1390,74 1416,72 1440,68"/>
+      </svg>
+      <div class="curtain__body"></div>
+    </div>
+
+    <a class="scroll-cue" href="#reel-title">
+      <span class="scroll-cue__label">Scroll down to explore</span>
+      <i class="ph ph-caret-double-down" aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- ====================================================================
+       THE REEL
+       A sticky prefix beside a tall list of words. Scrolling carries the
+       words past it; exactly one is lit at a time. No pinning involved.
+       ==================================================================== -->
+  <section id="reel" class="reel" aria-labelledby="reel-title">
+    <div class="wrap">
+
+      <div class="reel__intro">
+        <h2 class="reel__lead" id="reel-title">Start off by seeing my work!</h2>
+        <p>I, <b>Emith Hansana Dissanayake</b>, as a curious, driven young individual with a passion for continuously expanding my skills across different areas, personally believe that the best way to showcase what I can do isn’t by talking about it, but rather by showing it. So, if you’re here to explore my potential, I invite you to walk through some of the work that I’ve created, including projects I did to push my skills and knowledge within the industry to things I’ve pursued simply out of passion, curiosity, or as a product of my habits. </p>
+      </div>
+
+      <!-- Each word is a real link so it is keyboard reachable and readable
+           by a screen reader as a list. Only the lit one is clickable by
+           mouse; the rest are pointer-events: none. -->
+      <div class="reel__scroll">
+        <p class="reel__prefix">See my&nbsp;</p>
+
+        <ul class="reel__words">
+          <li class="reel__word"><a class="reel__link" href="pawsitive.html" aria-label="See my ux projects"><span>UX research / design projects.</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li>
+          <li class="reel__word"><a class="reel__link" href="graphics.html" aria-label="See my graphics work"><span>graphics designs.</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li>
+          <li class="reel__word"><a class="reel__link" href="https://drive.google.com/file/d/1voxi0uPVNUTEQXncX-hcZ_D12hsdY9Ey/view" target="_blank" rel="noopener" aria-label="See my brand systems"><span>research and branding work.</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li>
+          <li class="reel__word"><a class="reel__link" href="https://drive.google.com/file/d/1JMaPX4dnD2RN7AAUyouK-mrXKmOAkKVO/view" target="_blank" rel="noopener" aria-label="See my case studies"><span>music related projects.</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li>
+          <!-- <li class="reel__word"><a class="reel__link" href="pawsitive.html" aria-label="See my front-end builds"><span>social media projects.</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li> -->
+          
+          <!-- <li class="reel__word"><a class="reel__link" href="#work" aria-label="See my prototypes"><span>mechanical skills.</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li>
+          <li class="reel__word"><a class="reel__link" href="#work" aria-label="See my process"><span>photography work.</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li>
+          <li class="reel__word"><a class="reel__link" href="#work" aria-label="See my work"><span>resume.</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></li> -->
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       SELECTED WORK
+       Four projects, four grid cells, four different aspect ratios.
+       ==================================================================== -->
+  <!-- <section id="work" class="section" aria-labelledby="work-title">
+    <div class="wrap">
+      <header class="section__head">
+        <h2 class="section__title reveal" id="work-title">Selected work</h2>
+        <p class="section__lead reveal">
+          UX research, branding and front-end, from the first sketch through to the shipped page.
+        </p>
+      </header>
+
+      <div class="work-grid">
+
+        <article class="work-item reveal">
+          <a class="work-link" href="pawsitive.html">
+            <figure class="work-figure">
+              <img src="images/pf.png" width="1942" height="2016" loading="lazy" decoding="async"
+                   alt="Homepage layout for the Pawsitive Futures animal adoption site.">
+            </figure>
+            <div class="work-meta">
+              <span class="work-kind">UX Design</span>
+              <div>
+                <h3 class="work-title">Pawsitive Futures <i class="ph ph-arrow-up-right" aria-hidden="true"></i></h3>
+                <p class="work-note">A full UX process for an animal adoption centre, from research and personas through to a working three-page build.</p>
+              </div>
             </div>
+          </a>
+        </article>
 
-            <div class="hidden md:flex items-center gap-8">
-                <nav class="flex items-center gap-6">
-                    <a href="index.html" class="nav-click-effect text-sm font-medium text-primary hover:text-primary transition-colors duration-200">Home</a>
-                    <a href="aboutme.html" class="nav-click-effect text-sm font-medium hover:text-primary transition-colors duration-200">About Me</a>
-                    <a href="contact.html" class="nav-click-effect text-sm font-medium hover:text-primary transition-colors duration-200">Contact</a>
-                    <a href="projects.html" class="nav-click-effect flex items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary/60 text-white text-sm font-bold tracking-[0.015em] shadow-[0_0_15px_rgba(164,19,236,0.3)]">
-                        <span class="truncate">My Projects</span>
-                    </a>
-                </nav>
+        <article class="work-item reveal">
+          <a class="work-link" href="https://drive.google.com/file/d/1voxi0uPVNUTEQXncX-hcZ_D12hsdY9Ey/view" target="_blank" rel="noopener">
+            <figure class="work-figure">
+              <img src="images/web/feelsandf.jpg" width="1274" height="683" loading="lazy" decoding="async"
+                   alt="Feels and Flavors bakery branding, showing the mark applied across packaging.">
+            </figure>
+            <div class="work-meta">
+              <span class="work-kind">Branding</span>
+              <div>
+                <h3 class="work-title">Feels &amp; Flavors <i class="ph ph-arrow-up-right" aria-hidden="true"></i></h3>
+                <p class="work-note">A complete branding package for a bakery, from the mark out to packaging and collateral.</p>
+              </div>
             </div>
+          </a>
+        </article>
 
-            <button id="menu-btn" class="md:hidden flex items-center p-2 text-primary focus:outline-none nav-click-effect">
-                <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
-            </button>
-        </div>
-
-        <div id="mobile-menu" class="md:hidden bg-background-dark border-b border-[#332839]">
-            <div class="flex flex-col gap-4 px-6 py-6">
-                <a href="index.html" class="nav-click-effect text-lg  text-primary font-bold">Home</a>
-                <a href="aboutme.html" class="nav-click-effect text-lg font-medium">About Me</a>
-                <a href="contact.html" class="nav-click-effect text-lg font-medium">Contact</a>
-                <a href="projects.html" class="nav-click-effect text-lg font-medium underline">My Projects</a>
+        <article class="work-item reveal">
+          <a class="work-link" href="https://drive.google.com/file/d/1JMaPX4dnD2RN7AAUyouK-mrXKmOAkKVO/view" target="_blank" rel="noopener">
+            <figure class="work-figure">
+              <img src="images/sweetwater.png" width="1942" height="2016" loading="lazy" decoding="async"
+                   alt="Pages from the Sweetwater brand guide showing its type and colour rules.">
+            </figure>
+            <div class="work-meta">
+              <span class="work-kind">Branding</span>
+              <div>
+                <h3 class="work-title">Sweetwater <i class="ph ph-arrow-up-right" aria-hidden="true"></i></h3>
+                <p class="work-note">A brand guide built as a study in how far tone, type and colour can carry an identity.</p>
+              </div>
             </div>
-        </div>
-    </header>
+          </a>
+        </article>
 
-    <main class="flex-grow flex flex-col items-center w-full">
-        <div class="layout-container w-full max-w-[1280px] px-4 md:px-10 lg:px-40 flex flex-col">
-            
-            <section class="@container py-12 md:py-20">
-                <div class="flex flex-col gap-8 md:flex-row md:items-center">
-                    
-                    <div class="flex flex-col gap-6 flex-1 md:pr-8">
-                        <div class="flex flex-col gap-2 text-left">
-                            
-                            <h1 class="main-headd text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-500 pb-2 -mb-2">
-                                Emith, A Passionate Interactive Media Designer
-                            </h1>
-                            <h2 class="text-text-secondary text-base md:text-lg font-normal leading-relaxed max-w-[600px]">
-                                With unique skills in UX/UI, Graphics Design, Web Development and many more.
-                            </h2>
-                        </div>
-
-                        <div class="flex flex-wrap gap-4 pt-2">
-                            <a href="projects.html" class="nav-click-effect flex items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary/60 text-white font-bold transition-transform hover:scale-105 shadow-lg shadow-primary/25">
-                                <span>View My Work!</span>
-                            </a>
-                            <a href="assets/emith_dissanayake_resume.pdf" download class="nav-click-effect flex items-center justify-center rounded-lg h-12 px-6 bg-transparent border border-[#332839] hover:bg-[#332839] text-white font-medium group">
-                                <span class="mr-2">Download Resume</span>
-                                <span class="material-symbols-outlined text-lg group-hover:translate-y-0.5 transition-transform">download</span>
-                            </a>
-                        </div>
-
-                        <div class="block md:hidden w-full relative group mt-4">
-                            <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-green-500 rounded-xl blur opacity-20"></div>
-                            <a href="pawsitive.html" class="relative block w-full aspect-video bg-surface-dark rounded-xl overflow-hidden border border-[#332839] shadow-xl nav-click-effect">
-                                <div class="w-full h-full bg-cover bg-center" style='background-image: url(images/pf.png);'>
-                                    <div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent flex items-end p-4">
-                                        <div class="flex items-center gap-2 text-white/90">
-                                            <span class="material-symbols-outlined animate-spin text-sm" style="animation-duration: 3s;">data_usage</span>
-                                            <span class="text-[10px] font-mono uppercase tracking-widest">LATEST ACADEMIC PROJECT - Pawsitive Futures UX Design and Website Development</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="hidden md:flex flex-1 w-full relative group perspective-1000">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-green-500 to-green-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                        <a href="pawsitive.html" class="nav-click-effect relative block w-full aspect-square lg:aspect-[4/3] bg-surface-dark rounded-xl overflow-hidden border border-[#332839] shadow-2xl">
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" style='background-image: url(images/pf.png);'>
-                                <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent flex items-end p-6">
-                                    <div class="flex items-center gap-2 text-white/80">
-                                        <span class="material-symbols-outlined animate-spin text-sm" style="animation-duration: 3s;">data_usage</span>
-                                        <span class="text-xs font-mono uppercase tracking-widest">LATEST ACADEMIC PROJECT - Pawsitive Futures UX Design and Website Development</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="py-12">
-                <div class="bg-gradient-to-br from-[#231828] to-background-dark border border-[#332839] rounded-2xl p-6 md:p-10 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
-                    <div class="flex flex-col-reverse md:flex-row items-center gap-10 relative z-10">
-                        <div class="flex-1 flex flex-col gap-6">
-                            <div class="flex flex-col gap-3">
-                                <h2 class="text-3xl font-bold leading-tight">About Me</h2>
-                                <div class="h-1 w-20 bg-primary rounded-full"></div>
-                                <p class="text-text-secondary text-base md:text-lg font-normal leading-relaxed mt-2">
-                                    I am a Digital Multimedia Design student with a passion for blending code and canvas. My work explores the intersection of visual excitement and functionality.
-                                </p>
-                            </div>
-                            <div class="flex gap-4 items-center">
-                                <a href="aboutme.html" class="nav-click-effect flex items-center gap-2 text-white bg-surface-dark border border-[#332839] hover:border-primary hover:text-primary px-5 py-2.5 rounded-lg transition-all">
-                                    <span class="font-medium text-sm">Read Full Bio</span>
-                                    <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/3 aspect-[3/4] md:aspect-square bg-cover bg-center rounded-xl shadow-2xl border border-[#332839] rotate-2 hover:rotate-0 transition-transform duration-300" style='background-image: url("images/mypic.jpg");'></div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer class="w-full border-t border-[#332839] py-8 bg-[#161118]">
-        <div class="layout-container flex justify-center px-6 lg:px-10">
-            <div class="w-full max-w-[1200px] flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-2 text-white/50">
-                    <a href="index.html" class="nav-click-effect cursor-pointer">
-                        <span class="text-sm font-medium">Emith Dissanayake</span>
-                    </a>
-                </div>
-                <div class="flex gap-6">
-                    <a class="nav-click-effect text-text-secondary hover:text-primary transition-colors flex flex-col items-center gap-1 group" href="https://www.linkedin.com/in/emithhansana/">
-                        <span class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-dark border border-[#332839] group-hover:border-primary transition-colors">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-                        </span>
-                        <span class="text-xs">LinkedIn</span>
-                    </a>
-                    <a class="nav-click-effect text-text-secondary hover:text-primary transition-colors flex flex-col items-center gap-1 group" href="mailto:diss0006@algonquinlive.com">
-                        <span class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-dark border border-[#332839] group-hover:border-primary transition-colors">
-                            <span class="material-symbols-outlined text-[20px]">mail</span>
-                        </span>
-                        <span class="text-xs">Email</span>
-                    </a>
-                </div>
+        <article class="work-item reveal">
+          <a class="work-link" href="graphics.html">
+            <figure class="work-figure">
+              <img src="images/web/graphics.jpg" width="1080" height="946" loading="lazy" decoding="async"
+                   alt="A grid of poster, banner and album artwork.">
+            </figure>
+            <div class="work-meta">
+              <span class="work-kind">Graphics</span>
+              <div>
+                <h3 class="work-title">Graphic work <i class="ph ph-arrow-up-right" aria-hidden="true"></i></h3>
+                <p class="work-note">Posters, banners and moodboard studies made across personal and course projects.</p>
+              </div>
             </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ====================================================================
+       ABOUT
+       ==================================================================== -->
+  <section id="about" class="section" aria-labelledby="about-title">
+    <div class="wrap about">
+
+      <figure class="about__portrait reveal">
+        <img src="images/web/mypic.jpg" width="1100" height="1412" loading="lazy" decoding="async"
+             alt="Emith Dissanayake.">
+      </figure>
+
+      <div class="about__body">
+        <h2 class="section__title u-visually-hidden" id="about-title">About Emith</h2>
+        <p class="lead reveal">"I prefer to define myself as a <b>polymath</b>, because I'm curious enough to explore many fields, and passionate enough to master whatever I pursue. "</p>
+        <p class="reveal">
+          I am Emith Dissanayake, an Interactive Media Design student at Algonquin College in Ottawa.
+          I grew up in Colombo and came here to study the part of design that sits between the visual
+          and the technical.
+        </p>
+        <p class="reveal">
+          That means a project can go from user research and wireframes through to brand, layout and
+          the front-end code that ships it, without the intent getting lost somewhere in a handoff.
+        </p>
+
+        <div class="btn-row reveal">
+        <a class="btn3d btn3d--accent" href="aboutme.html" data-alt="Read it now">
+          <span class="btn3d__bg"></span>
+          <svg class="btn3d__splash" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 342 208" aria-hidden="true"><path stroke-linecap="round" d="M54.1 99.8S40.1 90.8 26.7 97.6C13.3 104.5 1.5 97.6 1.5 97.6"/><path stroke-linecap="round" d="M285.3 99.8s14-9 27.4-2.2c13.4 6.9 27.4-2.1 27.4-2.1"/><path stroke-linecap="round" stroke-opacity=".3" d="M281.1 65s6.8-15.2 21.8-16.8c15-1.6 16.8-11.7 16.8-11.7"/><path stroke-linecap="round" stroke-opacity=".3" d="M281.1 139s6.8 15.2 21.8 16.8c15 1.6 16.8 11.7 16.8 11.7"/><path stroke-linecap="round" d="M230.6 57.4s-4.8-15.9 5.5-26.9c10.3-11 8.6-17.5 8.6-17.5"/><path stroke-linecap="round" d="M230.6 150.5s-4.8 15.9 5.5 26.9c10.3 11 8.6 17.5 8.6 17.5"/><path stroke-linecap="round" stroke-opacity=".3" d="M170.4 57s3.5-14.9-.8-27.5c-4.3-12.6-.8-27.5-.8-27.5"/><path stroke-linecap="round" stroke-opacity=".3" d="M170.4 150.9s3.5 14.9-.8 27.5c-4.3 12.6-.8 27.5-.8 27.5"/><path stroke-linecap="round" d="M112.6 57.4s4.8-15.9-5.5-26.9C96.8 19.5 98.5 13 98.5 13"/><path stroke-linecap="round" d="M112.6 150.5s4.8 15.9-5.5 26.9c-10.3 11-8.6 17.5-8.6 17.5"/><path stroke-linecap="round" stroke-opacity=".3" d="M62.3 65s-6.8-15.2-21.8-16.8C25.5 46.7 23.7 36.5 23.7 36.5"/><path stroke-linecap="round" stroke-opacity=".3" d="M62.3 146s-6.8 15.2-21.8 16.8c-15 1.6-16.8 11.7-16.8 11.7"/></svg>
+          <span class="btn3d__content">
+            <span class="btn3d__chars btn3d__chars--a" data-label="See full Bio">See full Bio</span>
+            <span class="btn3d__chars btn3d__chars--b"></span>
+            <span class="btn3d__icon"><i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          </span>
+        </a>
+        <a class="btn3d btn3d--light" href="assets/emith_dissanayake_resume.pdf" download data-alt="Get the PDF">
+          <span class="btn3d__bg"></span>
+          <svg class="btn3d__splash" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 342 208" aria-hidden="true"><path stroke-linecap="round" d="M54.1 99.8S40.1 90.8 26.7 97.6C13.3 104.5 1.5 97.6 1.5 97.6"/><path stroke-linecap="round" d="M285.3 99.8s14-9 27.4-2.2c13.4 6.9 27.4-2.1 27.4-2.1"/><path stroke-linecap="round" stroke-opacity=".3" d="M281.1 65s6.8-15.2 21.8-16.8c15-1.6 16.8-11.7 16.8-11.7"/><path stroke-linecap="round" stroke-opacity=".3" d="M281.1 139s6.8 15.2 21.8 16.8c15 1.6 16.8 11.7 16.8 11.7"/><path stroke-linecap="round" d="M230.6 57.4s-4.8-15.9 5.5-26.9c10.3-11 8.6-17.5 8.6-17.5"/><path stroke-linecap="round" d="M230.6 150.5s-4.8 15.9 5.5 26.9c10.3 11 8.6 17.5 8.6 17.5"/><path stroke-linecap="round" stroke-opacity=".3" d="M170.4 57s3.5-14.9-.8-27.5c-4.3-12.6-.8-27.5-.8-27.5"/><path stroke-linecap="round" stroke-opacity=".3" d="M170.4 150.9s3.5 14.9-.8 27.5c-4.3 12.6-.8 27.5-.8 27.5"/><path stroke-linecap="round" d="M112.6 57.4s4.8-15.9-5.5-26.9C96.8 19.5 98.5 13 98.5 13"/><path stroke-linecap="round" d="M112.6 150.5s4.8 15.9-5.5 26.9c-10.3 11-8.6 17.5-8.6 17.5"/><path stroke-linecap="round" stroke-opacity=".3" d="M62.3 65s-6.8-15.2-21.8-16.8C25.5 46.7 23.7 36.5 23.7 36.5"/><path stroke-linecap="round" stroke-opacity=".3" d="M62.3 146s-6.8 15.2-21.8 16.8c-15 1.6-16.8 11.7-16.8 11.7"/></svg>
+          <span class="btn3d__content">
+            <span class="btn3d__chars btn3d__chars--a" data-label="Download Resume">Download Resume</span>
+            <span class="btn3d__chars btn3d__chars--b"></span>
+            <span class="btn3d__icon btn3d__icon--down"><i class="ph ph-download-simple" aria-hidden="true"></i></span>
+          </span>
+        </a>
         </div>
-    </footer>
+      </div>
 
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('menu-icon');
+    </div>
+  </section>
 
-        btn.addEventListener('click', () => {
-            const isOpen = menu.classList.toggle('open');
-            icon.textContent = isOpen ? 'close' : 'menu';
-        });
+  <!-- ====================================================================
+       CONTACT
+       ==================================================================== -->
+  <!-- <section id="contact" class="section contact" aria-labelledby="contact-title">
+    <div class="wrap">
+  
 
-        // Optional: Close menu when a link is clicked
-        const navLinks = menu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.remove('open');
-                icon.textContent = 'menu';
-            });
-        });
-    </script>
+      <div class="contact__aside reveal">
+        <a class="pill-link" href="https://www.linkedin.com/in/emithhansana/" target="_blank" rel="noopener">
+          <i class="ph ph-linkedin-logo" aria-hidden="true"></i>LinkedIn
+        </a>
+        <a class="pill-link" href="assets/emith_dissanayake_resume.pdf" download>
+          <i class="ph ph-file-arrow-down" aria-hidden="true"></i>Résumé
+        </a>
+        <a class="pill-link" href="tel:+16138524929">
+          <i class="ph ph-phone" aria-hidden="true"></i>+1 (613) 852 4929
+        </a>
+      </div>
+    </div>
+  </section> -->
+
+</main>
+
+<footer class="site-foot wrap">
+  <span>Emith Dissanayake, Ottawa. 2026.</span>
+  <nav aria-label="Footer">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

@@ -1,410 +1,228 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>About Me - Emith Dissanayake</title>
-    
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#a413ec",
-                        "background-light": "#f7f6f8",
-                        "background-dark": "#1c1022",
-                        "surface-dark": "#2a1b32",
-                        "surface-light": "#ffffff",
-                    },
-                    fontFamily: {
-                        "display": ["Spline Sans", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "2xl": "1rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
-    <style>
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1c1022; }
-        ::-webkit-scrollbar-thumb { background: #4b3b54; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #a413ec; }
+<title>About - Emith Dissanayake</title>
+<meta name="description" content="Emith Dissanayake, Interaction (UX/UI) and Multimedia Designer in Ottawa. Interactive Media Design at Algonquin College, Google UX certified, working across research, interface, brand and front-end.">
+<link rel="canonical" href="https://emith.ca/aboutme.html">
 
-        .glass-panel {
-            background: rgba(42, 30, 50, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://emith.ca/aboutme.html">
+<meta property="og:title" content="About - Emith Dissanayake">
+<meta property="og:description" content="Interaction (UX/UI) and Multimedia Designer in Ottawa, working across research, interface, brand and front-end.">
+<meta property="og:image" content="https://emith.ca/images/web/mypic.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#191919">
 
-        #mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out;
-            opacity: 0;
-        }
-        #mobile-menu.open {
-            max-height: 300px;
-            opacity: 1;
-        }
+<link rel="icon" href="images/favicon.png" type="image/png">
 
-        /* Tactile Click Effect */
-        .nav-click-effect { transition: transform 0.1s ease, opacity 0.1s ease; }
-        .nav-click-effect:active { transform: scale(0.96); opacity: 0.8; }
+<link rel="preload" href="fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/main.css">
 
-        #cursor-tooltip {
-            pointer-events: none;
-            position: fixed;
-            z-index: 9999;
-            padding: 4px 10px;
-            background: #a413ec;
-            color: white;
-            font-size: 12px;
-            font-weight: 700;
-            border-radius: 4px;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-            white-space: nowrap;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-    </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+<script>
+  /* No `is-home`: the intro's held states belong to index.html only. */
+  document.documentElement.classList.add('js');
+</script>
 </head>
 
-<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white">
-    <div id="cursor-tooltip"></div>
-    <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-[#332839] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
-        <div class="px-4 md:px-10 lg:px-40 py-3 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <a href="index.html" class="cursor-pointer nav-click-effect">
-                    <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] block">Emith Dissanayake</h2>
-                </a>
-            </div>
+<body>
 
-            <div class="hidden md:flex items-center gap-8">
-                <nav class="flex items-center gap-6">
-                    <a href="index.html" class="nav-click-effect text-sm font-medium hover:text-primary transition-colors duration-200">Home</a>
-                    <a href="aboutme.html" class="nav-click-effect text-sm font-medium text-primary hover:text-primary transition-colors duration-200">About Me</a>
-                
-                    <a href="contact.html" class="nav-click-effect text-sm font-medium hover:text-primary transition-colors duration-200">Contact</a>
-                    <a href="projects.html" class="nav-click-effect flex items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary/60 text-white text-sm font-bold tracking-[0.015em] shadow-[0_0_15px_rgba(164,19,236,0.3)]">
-                        <span class="truncate">My Projects</span>
-                    </a>
-                </nav>
-            </div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-            <button id="menu-btn" class="md:hidden flex items-center p-2 text-primary focus:outline-none nav-click-effect">
-                <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
-            </button>
-        </div>
+<!-- ======================================================================
+     SITE NAV. Shared verbatim with index.html and contact.html, except that
+     subpages carry a real logo (the homepage's flies up out of the wordmark)
+     and the current page's icon is marked.
+     ====================================================================== -->
+<div class="site-nav">
+  <nav class="site-nav__inner" aria-label="Primary">
+    <a class="nav-logo" href="index.html" aria-label="Emith, back to home">
+      <svg viewBox="0 0 1000 1000" focusable="false" aria-hidden="true"><circle class="brandmark__disc" cx="500" cy="500" r="445"/><path class="brandmark__glyph" d="M 889.479 515.507 A 280.35 280.35 0 1 1 721.282 179.113 A 222.5 222.5 0 0 0 478.983 433.577 L 790.555 354.723 L 540.528 556.667 A 222.5 222.5 0 0 0 889.479 515.507 Z"/></svg>
+    </a>
 
-        <div id="mobile-menu" class="md:hidden bg-background-dark border-b border-[#332839]">
-            <div class="flex flex-col gap-4 px-6 py-6">
-                <a href="index.html" class="nav-click-effect text-lg font-medium">Home</a>
-                <a href="aboutme.html" class="nav-click-effect text-lg  text-primary font-bold">About Me</a>
-                <a href="contact.html" class="nav-click-effect text-lg font-medium">Contact</a>
-                <a href="projects.html" class="nav-click-effect text-lg font-medium underline">My Projects</a>
-            </div>
-        </div>
-    </header>
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    <span class="nav-cta glass is-disabled" aria-disabled="true">Discover me</span>
 
-        
-
-        <main class="flex-grow flex flex-col items-center">
-            
-            <section class="w-full max-w-7xl px-4 md:px-10 py-12 md:py-20">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-7 flex flex-col gap-6 order-2 lg:order-1">
-                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight">
-                            Emith Dissanayake - Interaction (UX/UI) & <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Multimedia Designer</span>
-                        </h1>
-                        <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-                            Based in Ottawa, Ontario, Canada.
-                        </p>
-                        <div class="flex flex-wrap gap-4 mt-2">
-                            <button class="flex items-center gap-2 h-12 px-6 bg-primary hover:bg-primary/90 text-white rounded-lg font-bold transition-all hover:scale-105 shadow-lg shadow-primary/25">
-                                <span><a href="#secn">See about me!</a></span>
-                            </button>
-                            <button class="flex items-center gap-2 h-12 px-6 bg-transparent border border-slate-300 dark:border-slate-700 hover:border-primary text-slate-900 dark:text-white hover:text-primary rounded-lg font-bold transition-all">
-                                <span>
-                                    <span class="material-symbols-outlined text-[20px]">download</span>
-                                    <a href="assets/emith_dissanayake_resume.pdf">Download Resume</a></span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-5 order-1 lg:order-2 relative">
-                        <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 group z-20">
-                            <!-- <div class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent mix-blend-overlay z-10 pointer-events-none"></div> -->
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" 
-                                 style="background-image: url('images/mypic.jpg');"
-                                 role="img" 
-                                 aria-label="Artistic portrait of Alex Sterling">
-                            </div>
-                        </div>
-                        <div class="absolute -z-0 -bottom-6 -right-6 w-full h-full border-2 border-primary/30 rounded-2xl hidden md:block"></div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="secn" class="w-full bg-surface-light dark:bg-surface-dark border-y border-gray-200 dark:border-white/5 py-16 md:py-24">
-                <div class="max-w-4xl mx-auto px-4 text-center">
-                    <span class="material-symbols-outlined text-4xl text-primary mb-6">format_quote</span>
-                    <h2 class="text-3xl md:text-4xl font-bold leading-snug">
-                        "With my creativeness combined with functionality and research ability, I can always find solutions for real-world problems"
-                    </h2>
-                    <div class="mt-8 flex justify-center">
-                        <div class="h-1 w-20 bg-primary rounded-full"></div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="w-full max-w-7xl px-4 md:px-10 py-16 md:py-24">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-                    
-                    <aside class="lg:col-span-4 flex flex-col gap-12">
-                        <div>
-                            <h3 class="flex items-center gap-2 text-xl font-bold mb-6 text-slate-900 dark:text-white">
-                                <span class="material-symbols-outlined text-primary">person</span>
-                                Profile
-                            </h3>
-                            <div class="text-slate-600 dark:text-slate-300 space-y-4 leading-relaxed">
-                                <p>Dynamic, imaginative Interactive Media Design student with creative and technical skills to create visually engaging yet functional designs. Skilled in User Experience (UX) and User Interface (UI) designing with practical experience in user research to prototyping to creating responsive designs. Also experienced in web development and graphics designing. A quick learner who thrives in collaborative environments and is eager to contribute to real-world design projects, while seeking feedback and grow within the industry through co-op placement.</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 class="flex items-center gap-2 text-xl font-bold mb-6 text-slate-900 dark:text-white">
-                                <span class="material-symbols-outlined text-primary">build</span>
-                                Softwares
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Figma / FigJam</span>
-                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Adobe Creative Suite</span>
-                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Basecamp</span>
-                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Visual Studio Code</span>
-                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Ms Office</span>
-                                <span class="px-3 py-1.5 rounded-md bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-white/10 text-sm font-medium">Canva</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 class="flex items-center gap-2 text-xl font-bold mb-6 text-slate-900 dark:text-white">
-                                <span class="material-symbols-outlined text-primary">psychology</span>
-                                Expertise
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 rounded-md bg-primary/10 text-primary border border-primary/20 text-sm font-bold">UI/UX Design</span>
-                                <span class="px-3 py-1.5 rounded-md bg-primary/10 text-primary border border-primary/20 text-sm font-bold">Web Development</span>
-                                <span class="px-3 py-1.5 rounded-md bg-primary/10 text-primary border border-primary/20 text-sm font-bold">Graphics Design</span>
-                                <span class="px-3 py-1.5 rounded-md bg-primary/10 text-primary border border-primary/20 text-sm font-bold">Product Design</span>
-                            </div>
-                        </div>
-                    </aside>
-
-                    <div class="lg:col-span-8 flex flex-col gap-12">
-                        
-                        <section>
-                            <h3 class="flex items-center gap-2 text-2xl font-bold mb-8 text-slate-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4">
-                                Experience
-                            </h3>
-                            <div class="flex flex-col gap-8 relative pl-4 border-l-2 border-gray-200 dark:border-white/10 ml-3">
-                                <div class="relative pl-8">
-                                    <div class="absolute -left-[21px] top-1 h-4 w-4 rounded-full border-[3px] border-background-light dark:border-background-dark bg-primary"></div>
-                                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Pawsitive Futures UX Design (Academic Project)                                 </h4>
-                                        <span class="text-sm font-medium text-primary">May 2025 – Aug 2025 </span>
-                                    </div>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400 font-medium mb-3">Interactive Media Design - Algonquin College, Ottawa, ON, Canada</p>
-                                    <ul style="list-style-type: disc;" class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                                        <li>Conducted UX research including interviews and plotted down detailed analysis such as personas, user journeys and sitemaps.</li>
-                                        <li>Designed moodboards and style tiles to visualize key elements including typography, buttons, etc. for the website.</li>
-                                        <li>Created low-fidelity and high-fidelity prototypes to navigate, tweak the design to improve usability and have a visual overlook of the design.</li>
-                                        <li>Prototyped the final design to deliver a responsive design to the mock client in Figma. </li>
-                                    </ul>
-                                </div>
-                                <div class="relative pl-8">
-                                    <div class="absolute -left-[21px] top-1 h-4 w-4 rounded-full border-[3px] border-background-light dark:border-background-dark bg-primary"></div>
-                                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1"></div>
-                                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Production Assistant - Events & Media (Full-time)</h4>
-                                        <span class="text-sm font-medium text-primary">   Feb 2024 – Dec 2024</span>
-                                    </div>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400 font-medium mb-3">4You Productions - Gampaha, Sri Lanka</p>
-                                    <ul style="list-style-type: disc;" class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                                        <li>Maintained video production equipment to the standards and ensured readiness.</li>
-                                        <li>Assisted in setup and teardown of equipment for concerts and other events.</li>
-                                        <li>Coordinated and helped the event crews to support smooth production operations.</li>
-                                        <li>Supported with post-production and other tasks such as data transfer and organizing files.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section>
-                            <h3 class="flex items-center gap-2 text-2xl font-bold mb-8 text-slate-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4">
-                                Education
-                            </h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="group p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/5 hover:border-primary/50 transition-colors">
-                                    <div class="flex items-start justify-between mb-4">
-                                        <div class="p-2 rounded-lg bg-primary/10 text-primary"><span class="material-symbols-outlined">school</span></div>
-                                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">2025 – Present</span>
-                                    </div>
-                                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Interactive Media Design</h4>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400">Algonquin College - Ottawa, ON, Canada</p>
-                                    <ul style="list-style-type: disc;" class="mt-4 text-xs text-slate-400">
-                                        <li>Cumulative GPA of <b>4.0</b> up to date (2 Semesters)</li>
-                                        <li><b>Dean’s Honour list</b> in all semesters</li>
-                                    </ul>
-                                </div>
-                                <div class="group p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/5 hover:border-primary/50 transition-colors">
-                                    <div class="flex items-start justify-between mb-4">
-                                        <div class="p-2 rounded-lg bg-primary/10 text-primary"><span class="material-symbols-outlined">class</span></div>
-                                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">2021 – 2023</span>
-                                    </div>
-                                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">High School Graduate</h4>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400">St. Joseph’s College - Colombo 10, Sri Lanka</p>
-                                    <ul class="mt-4 text-xs text-slate-400">
-                                        <li>G.C.E Advanced Level passed with <b>3 Credits</b> in Physical Science</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section>
-                            <h3 class="flex items-center gap-2 text-2xl font-bold mb-8 text-slate-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4">
-                                Certifications
-                            </h3>
-                            <div class="flex flex-col gap-4">
-                                <div class="flex items-center gap-4 p-4 rounded-lg hover:bg-surface-light dark:hover:bg-surface-dark transition-colors border border-transparent hover:border-gray-200 dark:hover:border-white/5">
-                                    <div class="flex-shrink-0 text-yellow-500"><span class="material-symbols-outlined">verified</span></div>
-                                    <div>
-                                        <h5 class="text-base font-bold text-slate-900 dark:text-white">Google UX Design Professional Certificate </h5>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400">Google Career Certificates</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4 p-4 rounded-lg hover:bg-surface-light dark:hover:bg-surface-dark transition-colors border border-transparent hover:border-gray-200 dark:hover:border-white/5">
-                                    <div class="flex-shrink-0 text-yellow-500"><span class="material-symbols-outlined">verified</span></div>
-                                    <div>
-                                        <h5 class="text-base font-bold text-slate-900 dark:text-white">UX Foundations: Interaction Design </h5>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400">LinkedIn Learning</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </section>
-
-            <section class="w-full px-4 py-20 bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-white/5 text-center">
-                <div class="max-w-2xl mx-auto flex flex-col items-center gap-6">
-                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Impressive enough?</h2>
-                    <p class="text-slate-600 dark:text-slate-300">
-                        I'm currently available for full-time co-op/internship opportunities.
-                    </p>
-                    <button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-primary/90 text-white text-base font-bold shadow-xl shadow-primary/20 transition-transform hover:-translate-y-1">
-                        Reach Me Out!
-                    </button>
-                </div>
-            </section>
-        </main>
-
-        <footer class="w-full border-t border-[#332839] py-8 bg-[#161118]">
-            <div class="layout-container flex justify-center px-6 lg:px-10">
-                <div class="w-full max-w-[1200px] flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div class="flex items-center gap-2 text-white/50">
-                        <a href="index.html" class="nav-click-effect cursor-pointer text-sm font-medium">Emith Dissanayake</a>
-                    </div>
-                    <div class="flex gap-6">
-                        <a class="nav-click-effect text-[#b09db9] hover:text-primary transition-colors tooltip-trigger" data-tooltip="LinkedIn" href="https://www.linkedin.com/in/emithhansana/">
-                            <span class="material-symbols-outlined">web</span>
-                        </a>
-                        <a class="nav-click-effect text-[#b09db9] hover:text-primary transition-colors tooltip-trigger" data-tooltip="Email" href="mailto:diss0006@algonquinlive.com">
-                            <span class="material-symbols-outlined">mail</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    <div class="nav-icons glass">
+      <a class="navicon is-current" href="aboutme.html" aria-current="page">
+        <i class="ph ph-user" aria-hidden="true"></i>
+        <span class="navicon__label"><span>About me</span></span>
+        <span class="u-visually-hidden">About me</span>
+      </a>
+      <span class="navicon__sep" aria-hidden="true"></span>
+      <a class="navicon" href="contact.html">
+        <i class="ph ph-hand-waving" aria-hidden="true"></i>
+        <span class="navicon__label"><span>Contact</span></span>
+        <span class="u-visually-hidden">Contact</span>
+      </a>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Tooltip Logic
-            const tooltip = document.getElementById('cursor-tooltip');
-            const triggers = document.querySelectorAll('.tooltip-trigger');
+  </nav>
+</div>
 
-            triggers.forEach(trigger => {
-                trigger.addEventListener('mouseenter', () => {
-                    tooltip.textContent = trigger.getAttribute('data-tooltip');
-                    tooltip.style.opacity = '1';
-                });
-                trigger.addEventListener('mousemove', (e) => {
-                    tooltip.style.left = (e.clientX + 15) + 'px';
-                    tooltip.style.top = (e.clientY + 15) + 'px';
-                });
-                trigger.addEventListener('mouseleave', () => { tooltip.style.opacity = '0'; });
-            });
+<main id="main" class="page">
+  <div class="wrap">
 
-            // Hamburger Menu Logic
-            const btn = document.getElementById('menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
+    <!-- ================================================================
+         MASTHEAD
+         ================================================================ -->
+    <header class="masthead">
+      <div>
+        <p class="masthead__eyebrow reveal">About</p>
+        <h1 class="masthead__title reveal">Emith<br>Dissanayake</h1>
+      </div>
+      <div class="masthead__meta reveal">
+        <span><b>Interaction (UX/UI)</b></span>
+        <span><b>and Multimedia Designer</b></span>
+        <span>Ottawa, Ontario</span>
+        <span>Open to co-op</span>
+      </div>
+    </header>
 
-            btn.addEventListener('click', () => {
-                const isOpen = menu.classList.toggle('open');
-                icon.textContent = isOpen ? 'close' : 'menu';
-            });
+    <!-- ================================================================
+         THE STATEMENT, BESIDE THE PERSON
+         ================================================================ -->
+    <section class="bio" aria-labelledby="bio-title">
+      <figure class="bio__portrait reveal">
+        <img src="images/web/mypic.jpg" width="1100" height="1412" decoding="async"
+             alt="Emith Dissanayake.">
+      </figure>
 
-            // Filtering Logic
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const cards = document.querySelectorAll('.project-card');
+      <div>
+        <h2 class="bio__quote reveal" id="bio-title">
+          Creativeness combined with <span>functionality</span> and research.
+        </h2>
+        <div class="bio__body">
+          <p class="reveal">
+            I am an Interactive Media Design student with both the creative and the
+            technical half of the job: work that looks like something, and work that
+            actually holds up when someone uses it. That runs from user research and
+            prototyping through to responsive front-end, with graphic design and
+            branding alongside it.
+          </p>
+          <p class="reveal">
+            I grew up in Colombo and moved to Ottawa to study the part of design that
+            sits between the visual and the technical. I learn fast, I work well in a
+            team, and I go looking for feedback rather than waiting for it, because
+            that is the shortest route to work that is genuinely better rather than
+            merely finished.
+          </p>
+          <div class="btn-row reveal">
+            <a class="btn3d btn3d--accent" href="contact.html" data-alt="Say hello">
+              <span class="btn3d__bg"></span>
+              <span class="btn3d__content">
+                <span class="btn3d__chars btn3d__chars--a" data-label="Get in touch">Get in touch</span>
+                <span class="btn3d__chars btn3d__chars--b"></span>
+                <span class="btn3d__icon"><i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+              </span>
+            </a>
+            <a class="btn3d btn3d--light" href="assets/emith_dissanayake_resume.pdf" download data-alt="Get the PDF">
+              <span class="btn3d__bg"></span>
+              <span class="btn3d__content">
+                <span class="btn3d__chars btn3d__chars--a" data-label="Download Resume">Download Resume</span>
+                <span class="btn3d__chars btn3d__chars--b"></span>
+                <span class="btn3d__icon btn3d__icon--down"><i class="ph ph-download-simple" aria-hidden="true"></i></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            filterBtns.forEach(button => {
-                button.addEventListener('click', () => {
-                    const filter = button.getAttribute('data-filter');
-                    
-                    // Button UI Toggle
-                    filterBtns.forEach(btn => {
-                        btn.classList.replace('bg-primary', 'bg-[#332839]');
-                        const p = btn.querySelector('p');
-                        p.classList.replace('text-white', 'text-[#b09db9]');
-                        p.classList.replace('font-bold', 'font-medium');
-                    });
-                    button.classList.replace('bg-[#332839]', 'bg-primary');
-                    const activeP = button.querySelector('p');
-                    activeP.classList.replace('text-[#b09db9]', 'text-white');
-                    activeP.classList.replace('font-medium', 'font-bold');
+    <!-- ================================================================
+         THE SPINE: education, credentials and work on one dated run
+         ================================================================ -->
+    <section class="spine" aria-labelledby="spine-title">
+      <h2 class="section__title reveal" id="spine-title">The route so far</h2>
 
-                    // Filter Card Animation
-                    cards.forEach(card => {
-                        const category = card.getAttribute('data-category');
-                        if (filter === 'all' || category === filter) {
-                            card.classList.remove('is-hidden');
-                            card.animate([{ opacity: 0, transform: 'scale(0.9)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 300 });
-                        } else {
-                            card.classList.add('is-hidden');
-                        }
-                    });
-                });
-            });
-        });
-    </script>
+      <div class="spine__list">
+        <article class="spine__item reveal">
+          <p class="spine__when">2025 to present</p>
+          <div class="spine__what">
+            <h3>Interactive Media Design</h3>
+            <p class="spine__where">Algonquin College, Ottawa</p>
+            <p>Cumulative GPA of 4.0, and the Dean's Honour List in every semester so far.</p>
+            <ul class="spine__tags">
+              <li>UX / UI</li><li>Web development</li><li>Graphics</li><li>Product design</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="spine__item reveal">
+          <p class="spine__when">Feb to Dec 2024</p>
+          <div class="spine__what">
+            <h3>Production Assistant</h3>
+            <p class="spine__where">4You Productions, Gampaha, Sri Lanka</p>
+            <p>Managed video production equipment and coordinated the moving parts of live event operations.</p>
+            <ul class="spine__tags">
+              <li>Production</li><li>Coordination</li><li>On set</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="spine__item reveal">
+          <p class="spine__when">Certified</p>
+          <div class="spine__what">
+            <h3>Google UX Design Professional Certificate</h3>
+            <p class="spine__where">Google Career Certificates</p>
+            <p>The full UX process end to end, from empathising and defining through to testing and iterating.</p>
+          </div>
+        </article>
+
+        <article class="spine__item reveal">
+          <p class="spine__when">Certified</p>
+          <div class="spine__what">
+            <h3>UX Foundations: Interaction Design</h3>
+            <p class="spine__where">LinkedIn Learning</p>
+            <p>Interaction principles: affordances, feedback, and the behaviour that sits under an interface.</p>
+          </div>
+        </article>
+
+        <article class="spine__item reveal">
+          <p class="spine__when">2021 to 2023</p>
+          <div class="spine__what">
+            <h3>G.C.E. Advanced Level, Physical Science</h3>
+            <p class="spine__where">St. Joseph's College, Colombo 10, Sri Lanka</p>
+            <p>Three credits in the Physical Science stream.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         THE TOOLKIT
+         ================================================================ -->
+    <section class="kit" aria-labelledby="kit-title">
+      <h2 class="section__title reveal" id="kit-title">What I work in</h2>
+
+      <div class="kit__grid reveal">
+        <div class="kit__cell"><i class="ph ph-figma-logo" aria-hidden="true"></i><b>Figma</b><span>Interface and prototype</span></div>
+        <div class="kit__cell"><i class="ph ph-flow-arrow" aria-hidden="true"></i><b>FigJam</b><span>Mapping and synthesis</span></div>
+        <div class="kit__cell"><i class="ph ph-palette" aria-hidden="true"></i><b>Adobe Creative Suite</b><span>Graphics and layout</span></div>
+        <div class="kit__cell"><i class="ph ph-code" aria-hidden="true"></i><b>VS Code</b><span>Front-end build</span></div>
+        <div class="kit__cell"><i class="ph ph-kanban" aria-hidden="true"></i><b>Basecamp</b><span>Team and project</span></div>
+        <div class="kit__cell"><i class="ph ph-shapes" aria-hidden="true"></i><b>Canva</b><span>Fast turnaround</span></div>
+        <div class="kit__cell"><i class="ph ph-files" aria-hidden="true"></i><b>MS Office</b><span>Documents and decks</span></div>
+        <div class="kit__cell"><i class="ph ph-translate" aria-hidden="true"></i><b>English, Sinhala</b><span>Languages</span></div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-foot wrap">
+  <span>Emith Dissanayake, Ottawa. 2026.</span>
+  <nav aria-label="Footer">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</footer>
+
+<script type="module" src="js/page.js"></script>
 </body>
-
 </html>
